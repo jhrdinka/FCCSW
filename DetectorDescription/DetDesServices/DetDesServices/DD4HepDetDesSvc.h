@@ -15,7 +15,6 @@
 #include "GaudiKernel/IIncidentListener.h"
 #include "GaudiKernel/ToolHandle.h"
 #include "SimulationInterfaces/IGeoConverterTool.h"
-#include "SimFastTools/RecoGeoConverterTool.h"
 #include "SimG4Tools/Geant4GeoConverterTool.h"
 
 #include <string>
