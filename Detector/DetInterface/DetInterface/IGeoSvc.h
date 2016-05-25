@@ -30,7 +30,7 @@ public:
     virtual DD4hep::Geometry::DetElement getDD4HepGeo() = 0;
     virtual DD4hep::Geometry::LCDD* lcdd() = 0;
     //receive Geant4 Geometry
-    virtual G4VUserDetectorConstruction* getGeant4Geo() = 0;
+//    virtual G4VUserDetectorConstruction* getGeant4Geo() = 0;
     
     virtual ~IGeoSvc() {}
     

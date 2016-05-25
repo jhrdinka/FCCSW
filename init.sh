@@ -7,6 +7,13 @@ else
     export BUILDTYPE="Debug"
 fi
 
+if [[ "x$ACTS" == "x" ]]; then 
+    echo "Need to set the ACTS environment variable."
+    return 1
+else 
+    echo "ACTS   :    $ACTS"
+fi
+
 source /afs/cern.ch/lhcb/software/releases/LBSCRIPTS/LBSCRIPTS_v8r5p7/InstallArea/scripts/LbLogin.sh --cmtconfig $BINARY_TAG
 # The LbLogin sets VERBOSE to 1 which increases the compilation output. If you want details et this to 1 by hand.
 export VERBOSE=
@@ -16,7 +23,9 @@ export PODIO=/afs/cern.ch/exp/fcc/sw/0.7/podio/0.3/$BINARY_TAG
 export DELPHES_DIR=/afs/cern.ch/exp/fcc/sw/0.7/Delphes/3.3.2/$BINARY_TAG
 export PYTHIA_DIR=/afs/cern.ch/sw/lcg/releases/LCG_80/MCGenerators/pythia8/212/$BINARY_TAG/
 
-export CMAKE_PREFIX_PATH=$FCCEDM:$PODIO:$DELPHES_DIR:/afs/cern.ch/sw/lcg/releases/LCG_83:$CMAKE_PREFIX_PATH:$PYTHIA_DIR
+export ACTS_DIR=$ACTS/installed
+export EIGEN_INCLUDE_DIR=/afs/cern.ch/sw/lcg/releases/eigen/3.2.7-292e1/x86_64-slc6-gcc49-opt/include/eigen3/
+export CMAKE_PREFIX_PATH=$FCCEDM:$PODIO:$DELPHES_DIR:/afs/cern.ch/sw/lcg/releases/LCG_83:$ACTS/build:$CMAKE_PREFIX_PATH:$PYTHIA_DIR
 
 # set up Pythia8 Index.xml
 export PYTHIA8_XML=/afs/cern.ch/sw/lcg/releases/LCG_80/MCGenerators/pythia8/212/$BINARY_TAG/share/Pythia8/xmldoc
