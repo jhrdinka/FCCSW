@@ -1,27 +1,26 @@
 ################################################################################
 # Package: DetFCChhTrackerSimple
 ################################################################################
-gaudi_subdir(DetFCChhTrackerSimple v1r0)
+#gaudi_subdir(DetFCChhTrackerSimple v1r0)
 
-gaudi_depends_on_subdirs(GaudiKernel
-                        Detector/DetExtensions)
+#gaudi_depends_on_subdirs(GaudiKernel)
 
 
-find_package(DD4hep)
-find_package(Geant4)
-include(${Geant4_USE_FILE})
+#find_package(DD4hep)
+#find_package(Geant4)
+#include(${Geant4_USE_FILE})
 
-set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PATH}  ${DD4hep_ROOT}/cmake )
-include( DD4hep )
+#set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PATH}  ${DD4hep_ROOT}/cmake )
+#include( DD4hep )
 
-find_package(ROOT COMPONENTS MathCore GenVector Geom REQUIRED)
+#find_package(ROOT COMPONENTS MathCore GenVector Geom REQUIRED)
 
-gaudi_add_module(DetFCChhTrackerSimple
-		  src/*.cpp
-		  INCLUDE_DIRS DD4hep ROOT DetExtensions Geant4
-		  LINK_LIBRARIES GaudiKernel DD4hep ROOT Geant4)
+#gaudi_add_module(DetFCChhTrackerSimple
+#		  src/*.cpp
+#		  INCLUDE_DIRS DD4hep ROOT Geant4
+#		  LINK_LIBRARIES GaudiKernel DD4hep ROOT Geant4)
 
-set(LIBRARY_OUTPUT_PATH ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
-message(STATUS "LIBRARY_OUTPUT_PATH -> ${LIBRARY_OUTPUT_PATH}")
-dd4hep_generate_rootmap(DetFCChhTrackerSimple)
+#set(LIBRARY_OUTPUT_PATH ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
+#message(STATUS "LIBRARY_OUTPUT_PATH -> ${LIBRARY_OUTPUT_PATH}")
+#dd4hep_generate_rootmap(DetFCChhTrackerSimple)
 
