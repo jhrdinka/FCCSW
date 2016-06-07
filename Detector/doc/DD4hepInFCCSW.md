@@ -370,7 +370,6 @@ The folder structure should look something like this (only including one baselin
 + Detector              # the base directory
 |- DetInterface         # contains virtual interface classes
 |- DetComponents        # implementations of services / tools
-|- DetExtensions        # for reconstruction extensions
 |- DetSensitive         # custom sensitive detectors
 |+ DetCommon            # basic shapes / elements / materials
  |- compact             # contains XMLs defining elements, materials, air volumes
@@ -387,7 +386,6 @@ The detector descriptions and geometry services / tools can be found in the `Det
 - DetComponents (actual implementations of the services / tools)
 
 Extensions of the DD4hep description are found in:
-- DetExtensions (for reconstruction)
 - DetSensitive (custom sensitive volumes)
 
 ### The master XMLs
