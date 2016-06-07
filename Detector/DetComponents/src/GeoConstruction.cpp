@@ -1,4 +1,4 @@
-/*#include "GeoConstruction.h"
+#include "GeoConstruction.h"
 
 #include <stdexcept>
 
@@ -79,4 +79,3 @@ G4VPhysicalVolume* GeoConstruction::Construct() {
   return m_world;
 }
 }
-*/

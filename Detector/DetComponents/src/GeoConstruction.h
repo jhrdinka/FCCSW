@@ -1,4 +1,4 @@
-/*#ifndef DETDESSERVICES_GEOCONSTRUCTION_H
+#ifndef DETDESSERVICES_GEOCONSTRUCTION_H
 #define DETDESSERVICES_GEOCONSTRUCTION_H
 
 // DD4hep
@@ -11,7 +11,7 @@ namespace DD4hep {
   namespace Geometry {
     class LCDD;
   }
-}*/
+}
 /** @class GeoConstruction DetectorDescription/DetDesServices/src/GeoConstruction.h GeoConstruction.h
  *
  *  Class to create Geant4 detector geometry from TGeo representation
@@ -21,7 +21,6 @@ namespace DD4hep {
  *  @author Markus Frank
  *  @author Anna Zaborowska
  */
-/*
 namespace det {
 class GeoConstruction : public G4VUserDetectorConstruction {
 public:
@@ -39,5 +38,4 @@ private:
   DD4hep::Geometry::LCDD& m_lcdd;
 };
 }
-*/
-//#endif /* DETDESSERVICES_GEOCONSTRUCTION_H */
+#endif /* DETDESSERVICES_GEOCONSTRUCTION_H */
