@@ -4,7 +4,9 @@
 gaudi_subdir(DetComponents v1r0)
 
 gaudi_depends_on_subdirs(GaudiKernel
-			 Detector/DetInterface)
+                         RecoGeometry
+                         Detector/DetInterface
+                         Detector/DetExtensions)
 
 find_package(ROOT COMPONENTS MathCore GenVector Geom)
 
@@ -19,6 +21,6 @@ add_definitions(-DACTS_PARAMETER_DEFINITIONS_PLUGIN=\"ACTS/Utilities/detail/Defa
 gaudi_install_headers(DetComponents)
 
 gaudi_add_module(DetComponents
-		 src/*.cpp
-		 INCLUDE_DIRS GaudiKernel ROOT DD4hep DetInterfaces Eigen ACTS #Geant4
-		 LINK_LIBRARIES GaudiKernel ROOT DD4hep ${DD4hep_DDG4_LIBRARY} ACTS::ACTSCore ACTS::ACTSDD4hepPlugin )#Geant4)
+                 src/*.cpp
+                 INCLUDE_DIRS GaudiKernel ROOT DD4hep Geant4 RecoGeometry DetInterfaces DetExtensions ACTS
+                 LINK_LIBRARIES GaudiKernel ROOT DD4hep ${DD4hep_DDG4_LIBRARY} Geant4 ACTS::ACTSCore ACTS::ACTSDD4hepPlugin)
