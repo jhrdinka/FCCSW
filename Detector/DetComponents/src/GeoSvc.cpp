@@ -17,7 +17,7 @@ DECLARE_COMPONENT(GeoSvc)
 GeoSvc::GeoSvc(const std::string& name, ISvcLocator* svc) :
 base_class(name, svc),
   m_dd4hepgeo(0),
-//  m_geant4geo(0),
+  m_geant4geo(0),
   m_log(msgSvc(), name) {
   declareProperty("detectors", m_xmlFileNames, "XML file with detector description");
 }
@@ -34,11 +34,11 @@ StatusCode GeoSvc::initialize() {
     else
         m_log << MSG::INFO << "DD4Hep geometry SUCCESSFULLY built" << endmsg;
 
-  /*  if (buildGeant4Geo().isFailure())
+    if (buildGeant4Geo().isFailure())
         m_log << MSG::ERROR << "Could not build Geant4 geometry" << endmsg;
     else
         m_log << MSG::INFO << "Geant4 geometry SUCCESSFULLY built" << endmsg;
-*/
+
     return StatusCode::SUCCESS;
 }
 
@@ -71,15 +71,15 @@ DD4hep::Geometry::DetElement GeoSvc::getDD4HepGeo() {
 }
 
 
-/*StatusCode GeoSvc::buildGeant4Geo() {
+StatusCode GeoSvc::buildGeant4Geo() {
   std::shared_ptr<G4VUserDetectorConstruction> detector(new det::GeoConstruction(*lcdd()));
     m_geant4geo = detector;
     if (m_geant4geo) {
         return StatusCode::SUCCESS;
     }
     else return StatusCode::FAILURE;
-}*/
+}
 
-/*G4VUserDetectorConstruction* GeoSvc::getGeant4Geo() {
+G4VUserDetectorConstruction* GeoSvc::getGeant4Geo() {
     return (m_geant4geo.get());
-}*/
+}
