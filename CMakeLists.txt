@@ -1,4 +1,8 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.5)
+set(CMAKE_CXX_STANDARD 14)
+set(LCG_SYSTEM $ENV{LCG_SYSTEM})
+# workaround for linker for lone -lGeom flag from ACTS
+set($ENV{LIBRARY_PATH} $ENV{LD_LIBRARY_PATH})
 #---------------------------------------------------------------
 # Load macros and functions for Gaudi-based projects
 find_package(GaudiProject)
