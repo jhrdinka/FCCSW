@@ -5,6 +5,9 @@
 #include "ACTS/Tools/CylinderVolumeHelper.hpp"
 #include "ACTS/Tools/CylinderVolumeBuilder.hpp"
 #include "ACTS/Plugins/DD4hepPlugins/DD4hepCylinderGeometryBuilder.hpp"
+#include "ACTS/Tools/LayerArrayCreator.hpp"
+#include "ACTS/Tools/TrackingVolumeArrayCreator.hpp"
+
 
 using namespace Gaudi;
 
@@ -30,8 +33,16 @@ StatusCode TrackingGeoSvc::initialize()
         m_log << MSG::ERROR << "Could not retrieve DD4hep geometry" << endmsg;
         return StatusCode::FAILURE;
     }
+    //hand over LayerArrayCreator
+    Acts::LayerArrayCreator::Config lacConfig;
+    auto layerArrayCreator = std::make_shared<Acts::LayerArrayCreator>(lacConfig);
+    //tracking volume array creator
+    Acts::TrackingVolumeArrayCreator::Config tvacConfig;
+    auto trackingVolumeArrayCreator = std::make_shared<Acts::TrackingVolumeArrayCreator>(tvacConfig);
     // configure the cylinder volume helper
     Acts::CylinderVolumeHelper::Config cvhConfig;
+    cvhConfig.layerArrayCreator          = layerArrayCreator;
+    cvhConfig.trackingVolumeArrayCreator = trackingVolumeArrayCreator;
     auto cylinderVolumeHelper = std::make_shared<Acts::CylinderVolumeHelper>(cvhConfig);
     // configure the volume builder
     Acts::CylinderVolumeBuilder::Config pvbConfig;
@@ -44,6 +55,9 @@ StatusCode TrackingGeoSvc::initialize()
     cgConfig.volumeBuilder = cylinderVolumeBuilder;
     auto geometryBuilder = std::make_shared<Acts::DD4hepCylinderGeometryBuilder>(cgConfig);
     // set the tracking geometry
+    m_trackingGeo = (std::move(geometryBuilder->trackingGeometry()));
+    std::cout<<m_trackingGeo.get()<<std::endl;
+
     m_trackingGeo = (std::move(geometryBuilder->trackingGeometry()));
     
     m_log << MSG::INFO << "TrackingGeoSvc initialize end" << endmsg;
