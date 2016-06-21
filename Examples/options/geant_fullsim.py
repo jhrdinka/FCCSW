@@ -26,9 +26,12 @@ hepmc_converter.DataOutputs.genvertices.Path="allGenVertices"
 
 # DD4hep geometry service
 # Parses the given xml file
-from Configurables import GeoSvc
-geoservice = GeoSvc("GeoSvc", detectors=['file:Detector/DetFCChhBaseline1/compact/FCChh_DectEmptyMaster.xml', 'file:Detector/DetFCChhTrackerSimple/compact/FCChh_GenericTracker.xml'],
+from Configurables import GeoSvc, TrackingGeoSvc
+#geoservice = GeoSvc("GeoSvc", detectors=['file:Detector/DetFCChhBaseline1/compact/FCChh_DectEmptyMaster.xml', 'file:Detector/DetFCChhTrackerSimple/compact/FCChh_GenericTracker.xml'],
+geoservice = GeoSvc("GeoSvc", detectors=['file:Detector/DetFCChhTrackerSimple/compact/FCCTracker.xml'],
                     OutputLevel = DEBUG)
+
+trkgeoservice = TrackingGeoSvc(GeometryService=geoservice)
 
 # Geant4 service
 # Configures the Geant simulation: geometry, physics list and user actions
@@ -65,6 +68,6 @@ ApplicationMgr( TopAlg = [reader, hepmc_converter, geantsim, out],
                 EvtSel = 'NONE',
                 EvtMax   = 1,
                 # order is important, as GeoSvc is needed by SimG4Svc
-                ExtSvc = [podioevent, geoservice, geantservice],
+                ExtSvc = [podioevent, geoservice, trkgeoservice, geantservice],
                 OutputLevel=DEBUG
  )
