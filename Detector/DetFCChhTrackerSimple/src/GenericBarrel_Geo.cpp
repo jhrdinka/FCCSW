@@ -28,11 +28,9 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
   DetElement GenericTrackerBarrelWorld(detName, xmlDet.id());
 
   // get sensitive detector type from xml
-  DD4hep::Geometry::SensitiveDetector sd = sensDet;
   DD4hep::XML::Dimension sdTyp = xmlElement.child("sensitive"); // retrieve the type
-  detVol.setSensitiveDetector(aSensDet);                     // set the type
   if ( xmlDet.isSensitive() ) {
-      sd.setType(sdTyp.typeStr());                             // set for the whole detector
+      sensDet.setType(sdTyp.typeStr());                             // set for the whole detector
   }
 
 
