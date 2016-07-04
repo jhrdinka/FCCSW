@@ -18,37 +18,42 @@
   <constant name="Tracker_InnerBarrel_rmax" value="600.*mm"/>
   <constant name="Tracker_InnerBarrel_length" value="600.*mm"/>
   <constant name="Tracker_module_width" value="51.2*mm"/>
-  <constant name="Tracker_module_length" value="102.4*mm"/>
+  <constant name="Tracker_module_length" value="60*mm"/>
   <constant name="Tracker_module_thickness" value="0.125*mm"/>
 </define>
 
 
 <display>
-        <vis name="comp0" r="0.55" g="0.82" b="0.77" alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
-        <vis name="comp1" r="1.0" g="1." b="0.7" alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
-        <vis name="comp2" r="0.74" g="0.72" b="0.85" alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
-        <vis name="comp3" r="0.98" g="0.5" b="0.44" alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
-        <vis name="mre" r="0.0" g="0.5" b="0" alpha="1" showDaugthers="true" visible="true" drawingStyle="solid"/>
+        <vis name="comp0" r="0.55" g="0.82" b="0.77" alpha="0.5" showDaugthers="false" visible="true" drawingStyle="solid"/>
+        <vis name="comp1" r="1.0" g="1." b="0.7" alpha="0.5" showDaugthers="true" visible="false" drawingStyle="solid"/>
+        <vis name="comp3" r="0.74" g="0.72" b="0.85" alpha="0.5" showDaugthers="true" visible="false" drawingStyle="solid"/>
+        <vis name="comp2" r="0.98" g="0.5" b="0.44" alpha="0.5" showDaugthers="true" visible="true" drawingStyle="solid"/>
+        <vis name="rme" r="0.0" g="0.5" b="0" alpha="0.5" showDaugthers="true" visible="true" drawingStyle="solid"/>
 </display>
 
 <readouts>
   <readout name="TrackerReadout">
     <segmentation type="CartesianGridXY" grid_size_x="0.5*mm" grid_size_y="0.5*mm"/>
-    <id>system:3,rod:10,module:10,module_component:2,x:32:-16,y:-16</id>
+    <id>system:3,layer:4.rod:10,module:10,module_component:2,x:32:-16,y:-16</id>
   </readout>
 </readouts>
 
 
 <detectors>
-  <detector id="18" name="GenericTracker_InnerBarrel" type="GenericTrackerBarrel" readout="TrackerReadout" sensitive="true" >
-  <sensitive type="Geant4Tracker"/>
+  <detector id="18" name="GenericTrackerBarrel" type="GenericTrackerBarrel" readout="TrackerReadout" sensitive="true" >
+  <sensitive type="SimpleTrackerSD"/>
   <dimensions rmin="Tracker_InnerBarrel_rmin" rmax="Tracker_InnerBarrel_rmax" dz="Tracker_InnerBarrel_length"/>
-  <layer repeat="3"/>
-  <module name="GenericTrackerModule" width="Tracker_module_width" length="Tracker_module_length" thickness="Tracker_module_thickness" vis="rme">
-    <module_component thickness="0.1*mm" material="Silicon" sensitive="true" vis="comp0" />
+  <layer module="GenericTrackerModule_small" r="25*mm" dz="500*mm"/>
+  <layer module="GenericTrackerModule" rmin="75*mm" rmax="600*mm" dz="1000*mm" repeat=8/>
+  <layer module="GenericTrackerModule_big" rmin="825*mm" rmax="2400*mm" dz="3000*mm" repeat=8/>
+  <module name="GenericTrackerModule" width="Tracker_module_width" length="Tracker_module_length" thickness="Tracker_module_thickness" vis="comp0"/>
+  <module name="GenericTrackerModule_small" width="0.5*Tracker_module_width" length="Tracker_module_length" thickness="Tracker_module_thickness" vis="comp0"/>
+  <module name="GenericTrackerModule_big" width="2*Tracker_module_width" length="2*Tracker_module_length" thickness="Tracker_module_thickness" vis="comp0" components="GenericModuleComponents"/>
+  <module_components name="GenericModuleComponents">
+    <module_component thickness="0.1*mm" material="Silicon" sensitive="true" vis="comp1" />
     <module_component thickness="0.1*mm" material="Carbon" sensitive="false" vis="comp1"/>
-    <module_component thickness="0.1*mm" material="Tungsten" sensitive="false" vis="comp2"/>
-  </module>
+    <module_component thickness="0.1*mm" material="Tungsten" sensitive="false" vis="comp1"/>
+  <module_components/>
 </detector>
 </detectors>
 </lccdd>
