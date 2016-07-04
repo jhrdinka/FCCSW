@@ -45,14 +45,14 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
     "GenericTrackerBarrel_rod_module",
     DD4hep::Geometry::Box( xModule.width(), xModule.thickness(), xModule.length()),
     lcdd.air());
-  moduleVolume.setVisAttributes(xModule.visStr());
+  moduleVolume.setVisAttributes(lcdd, xModule.visStr());
 
   // definition of rod volume (longitudinal arrangement of modules)
   Volume rodVolume(
     "GenericTrackerBarrel_rod",
     DD4hep::Geometry::Box(xModule.width(), xModule.thickness(), dimensions.dz()),
     lcdd.air());
-  rodVolume.setVisAttributes(lcdd.invisible());
+  rodVolume.setVisAttributes(lcdd, "comp3");
   DetElement Rod(GenericTrackerBarrelWorld, "GenericTrackerBarrel_rod", 3);
   
   // substructure of module (add the moment just 'module components', i.e. sheets of different materials)
@@ -86,9 +86,12 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
   }
 
   // placement of modules within rods
-  unsigned int zRepeat = dimensions.dz() / xModule.length() - 1;
+  double overlap = 0.9;
+  double stereo_offset = .2;
+  unsigned int zRepeat = static_cast<int>(dimensions.dz() / (xModule.length() - overlap)) + 1;
   for (unsigned int zIndex = 0; zIndex < zRepeat; ++zIndex) {
-      DD4hep::Geometry::Position moduleOffset(0, 0, 1.1 * zIndex * xModule.length() - dimensions.dz() / 2.);
+      stereo_offset *= -1.;
+      DD4hep::Geometry::Position moduleOffset(0, stereo_offset,  zIndex * 2 * (xModule.length() - overlap) - dimensions.dz() + xModule.length() - overlap);
       PlacedVolume placedModuleVolume = rodVolume.placeVolume(moduleVolume, moduleOffset);
       placedModuleVolume.addPhysVolID("module", zIndex);
   }
@@ -104,16 +107,18 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
     DetElement Layer(GenericTrackerBarrelWorld, "GenericTrackerBarrel_layer" + std::to_string(layerIndex), layerIndex);
     r = dimensions.rmin() + layerIndex*layerThickness;
     // approximation of tklayout values
-    nPhi = static_cast<unsigned int>(std::max(14., r*10. / 8.));
+    nPhi = static_cast<unsigned int>(std::max(14., r* 7. / 8.));
     for (unsigned int phiIndex = 0; phiIndex < nPhi; ++phiIndex) {
       phi = 2*M_PI * static_cast<double>(phiIndex) / static_cast<double>(nPhi);
       DD4hep::Geometry::Translation3D lTranslation(r*cos(phi), r*sin(phi), 0);
-      const double lModuleTwistAngle = 0.1*M_PI;
+      const double lModuleTwistAngle = 0.05*M_PI;
       DD4hep::Geometry::RotationZ lRotation(phi + lModuleTwistAngle + 0.5*M_PI);
       PlacedVolume placedRodVolume = envelopeVolume.placeVolume(rodVolume, lTranslation * lRotation );
       placedRodVolume.addPhysVolID("rod", layerIndex * nPhi +  phiIndex);
     }
   }
+
+  Volume motherVol = lcdd.pickMotherVolume(GenericTrackerBarrelWorld);
 
   //add Extension to DetElement for the RecoGeometry
   //Acts::DetExtension* WorldDetExt = new Acts::DetExtension(Acts::ShapeType::Cylinder);
@@ -123,7 +128,6 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
 
 
 
-  Volume motherVol = lcdd.pickMotherVolume(GenericTrackerBarrelWorld);
   PlacedVolume placedGenericTrackerBarrel = motherVol.placeVolume(envelopeVolume);
   placedGenericTrackerBarrel.addPhysVolID("system", GenericTrackerBarrelWorld.id());
   GenericTrackerBarrelWorld.setPlacement(placedGenericTrackerBarrel);
