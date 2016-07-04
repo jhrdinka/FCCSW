@@ -4,8 +4,6 @@
 // ATS
 #include "DetInterface/ITrackingGeoSvc.h"
 
-//Gaudi
-#include "GaudiKernel/ServiceHandle.h"
 #include "GaudiKernel/MsgStream.h"
 #include "GaudiKernel/Service.h"
 
@@ -58,7 +56,7 @@ public:
 private:
     
     /// Handle to the FCC geometry service
-    ServiceHandle<IGeoSvc>                       m_geoSvc;
+    SmartIF<IGeoSvc>                       m_geoSvc;
     //output
     MsgStream                                    m_log;
     // Tracking  Geometry

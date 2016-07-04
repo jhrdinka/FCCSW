@@ -2,11 +2,14 @@
 
 //ACTS
 #include "ACTS/Detector/TrackingGeometry.hpp"
+#include "ACTS/Detector/TrackingVolume.hpp"
 #include "ACTS/Tools/CylinderVolumeHelper.hpp"
 #include "ACTS/Tools/CylinderVolumeBuilder.hpp"
 #include "ACTS/Plugins/DD4hepPlugins/DD4hepCylinderGeometryBuilder.hpp"
 #include "ACTS/Tools/LayerArrayCreator.hpp"
 #include "ACTS/Tools/TrackingVolumeArrayCreator.hpp"
+
+#include "TGeoManager.h"
 
 
 using namespace Gaudi;
@@ -15,24 +18,29 @@ DECLARE_SERVICE_FACTORY(TrackingGeoSvc)
 
 TrackingGeoSvc::TrackingGeoSvc(const std::string& name, ISvcLocator* svc) :
 base_class(name, svc),
-m_geoSvc("",name),
 m_log(msgSvc(), name),
 m_trackingGeo(nullptr)
 {
-    declareProperty("GeometryService", m_geoSvc);
 }
 
 TrackingGeoSvc::~TrackingGeoSvc()
 {}
 
+
+
+
+
 StatusCode TrackingGeoSvc::initialize()
 {
-    m_log << MSG::INFO << "TrackingGeoSvc initialize()" << endmsg;
-    StatusCode sc = Service::initialize();
-    if(m_geoSvc.retrieve()==StatusCode::FAILURE) {
-        m_log << MSG::ERROR << "Could not retrieve DD4hep geometry" << endmsg;
-        return StatusCode::FAILURE;
-    }
+  m_geoSvc = service("GeoSvc");
+  if (! m_geoSvc) {
+    error() << "Unable to locate Tracking Geometry Service" << endmsg;
+    return StatusCode::FAILURE;
+  }
+  if (Service::initialize().isFailure()){
+    error()<<"Unable to initialize Service()"<<endmsg;
+    return StatusCode::FAILURE;
+  }
     //hand over LayerArrayCreator
     Acts::LayerArrayCreator::Config lacConfig;
     auto layerArrayCreator = std::make_shared<Acts::LayerArrayCreator>(lacConfig);
@@ -56,11 +64,12 @@ StatusCode TrackingGeoSvc::initialize()
     auto geometryBuilder = std::make_shared<Acts::DD4hepCylinderGeometryBuilder>(cgConfig);
     // set the tracking geometry
     m_trackingGeo = (std::move(geometryBuilder->trackingGeometry()));
-    std::cout<<m_trackingGeo.get()<<std::endl;
+    m_log << MSG::INFO <<m_trackingGeo.get() << endmsg;
 
-    m_trackingGeo = (std::move(geometryBuilder->trackingGeometry()));
-    
     m_log << MSG::INFO << "TrackingGeoSvc initialize end" << endmsg;
+
+
+
     return StatusCode::SUCCESS;
 }
 
