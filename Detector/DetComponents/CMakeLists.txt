@@ -21,4 +21,4 @@ gaudi_install_headers(DetComponents)
 gaudi_add_module(DetComponents
                  src/*.cpp
                  INCLUDE_DIRS GaudiKernel ROOT DD4hep Geant4 DetInterfaces  ACTS
-                 LINK_LIBRARIES GaudiKernel ROOT DD4hep ${DD4hep_DDG4_LIBRARY} Geant4 ACTS::ACTSCore ACTS::ACTSDD4hepPlugin)
+                 LINK_LIBRARIES GaudiKernel GaudiAlgLib ROOT DD4hep ${DD4hep_DDG4_LIBRARY} Geant4 ACTS::ACTSCore ACTS::ACTSDD4hepPlugin)
