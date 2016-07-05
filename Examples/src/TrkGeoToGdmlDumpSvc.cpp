@@ -48,6 +48,7 @@ void TrkGeoToGdmlDumpSvc::dumpTrackingLayer(const Acts::Layer* layer, TGeoVolume
   double width = 10;
   double height = 10; 
   double thickness = 15;
+  int module_counter = 0;
   TGeoMaterial* mat = new TGeoMaterial("Vacuum", 0, 0, 0);
   TGeoMaterial* matAl = new TGeoMaterial("Aluminium", 26, 13, 3);
   TGeoMedium *Al = new TGeoMedium("Aluminium",2, matAl);
