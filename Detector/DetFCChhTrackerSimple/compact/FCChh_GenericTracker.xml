@@ -11,14 +11,13 @@
   status="development"
   version="$Id:??$">
   <comment>An easy-to-configure Tracker</comment>
-</info>
 
 <define>
   <constant name="Tracker_InnerBarrel_rmin" value="157.7*mm"/>
   <constant name="Tracker_InnerBarrel_rmax" value="600.*mm"/>
   <constant name="Tracker_InnerBarrel_length" value="600.*mm"/>
-  <constant name="Tracker_module_width" value="51.2*mm"/>
-  <constant name="Tracker_module_length" value="60*mm"/>
+  <constant name="Tracker_module_width" value="25*mm"/>
+  <constant name="Tracker_module_length" value="200*mm"/>
   <constant name="Tracker_module_thickness" value="0.125*mm"/>
 </define>
 
@@ -28,7 +27,7 @@
         <vis name="comp1" r="1.0" g="1." b="0.7" alpha="0.5" showDaugthers="true" visible="false" drawingStyle="solid"/>
         <vis name="comp3" r="0.74" g="0.72" b="0.85" alpha="0.5" showDaugthers="true" visible="false" drawingStyle="solid"/>
         <vis name="comp2" r="0.98" g="0.5" b="0.44" alpha="0.5" showDaugthers="true" visible="true" drawingStyle="solid"/>
-        <vis name="rme" r="0.0" g="0.5" b="0" alpha="0.5" showDaugthers="true" visible="true" drawingStyle="solid"/>
+        <vis name="rme" r="0.1" g="0.7" b="0.2" alpha="0.5" showDaugthers="true" visible="true" drawingStyle="solid"/>
 </display>
 
 <readouts>
@@ -44,16 +43,23 @@
   <sensitive type="SimpleTrackerSD"/>
   <dimensions rmin="Tracker_InnerBarrel_rmin" rmax="Tracker_InnerBarrel_rmax" dz="Tracker_InnerBarrel_length"/>
   <layer module="GenericTrackerModule_small" r="25*mm" dz="500*mm"/>
-  <layer module="GenericTrackerModule" rmin="75*mm" rmax="600*mm" dz="1000*mm" repeat=8/>
-  <layer module="GenericTrackerModule_big" rmin="825*mm" rmax="2400*mm" dz="3000*mm" repeat=8/>
+  <layer module="GenericTrackerModule" rmin="75*mm" rmax="600*mm" dz="1000*mm" repeat="8"/>
+  <layer module="GenericTrackerModule_big" rmin="825*mm" rmax="2400*mm" dz="3000*mm" repeat="8"/>
   <module name="GenericTrackerModule" width="Tracker_module_width" length="Tracker_module_length" thickness="Tracker_module_thickness" vis="comp0"/>
-  <module name="GenericTrackerModule_small" width="0.5*Tracker_module_width" length="Tracker_module_length" thickness="Tracker_module_thickness" vis="comp0"/>
-  <module name="GenericTrackerModule_big" width="2*Tracker_module_width" length="2*Tracker_module_length" thickness="Tracker_module_thickness" vis="comp0" components="GenericModuleComponents"/>
+  <module name="GenericTrackerModule_small" width="0.25*Tracker_module_width" length="Tracker_module_length" thickness="Tracker_module_thickness" vis="comp0"/>
+  <module name="GenericTrackerModule_big" width="6*Tracker_module_width" length="2*Tracker_module_length" thickness="Tracker_module_thickness" vis="comp0" components="GenericModuleComponents"/>
   <module_components name="GenericModuleComponents">
     <module_component thickness="0.1*mm" material="Silicon" sensitive="true" vis="comp1" />
     <module_component thickness="0.1*mm" material="Carbon" sensitive="false" vis="comp1"/>
     <module_component thickness="0.1*mm" material="Tungsten" sensitive="false" vis="comp1"/>
-  <module_components/>
+  </module_components>
+</detector>
+  <detector id="19" name="GenericTrackerEndcap" type="GenericTrackerEndcap" readout="TrackerReadout" sensitive="true" >
+  <sensitive type="SimpleTrackerSD"/>
+  <dimensions rmin="0*mm" rmax="8000*mm" z1="1250*mm" z2="8000*mm"/>
+  <layer module="GenericTrackerModule" rmin="25*mm" rmax="600*mm" z1="1250*mm" z2="3000*mm" repeat="8"/>
+  <layer module="GenericTrackerModule" rmin="25*mm" rmax="2401.5*mm" z1="3500*mm" z2="8000*mm" repeat="10"/>
+  <module name="GenericTrackerModule" width="Tracker_module_width" length="Tracker_module_length" thickness="Tracker_module_thickness" vis="comp0"/>
 </detector>
 </detectors>
 </lccdd>
