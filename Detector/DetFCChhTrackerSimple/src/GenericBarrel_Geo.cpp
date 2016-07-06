@@ -78,9 +78,9 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
           DD4hep::Geometry::Box(0.5 * xModule.width(), 0.5 * xComp.thickness(), 0.5 * xModule.length()),
           lcdd.material(xComp.materialStr()));
         moduleComponentVolume.setVisAttributes(lcdd, xComp.visStr());
-        if (xComp.isSensitive()) {
-          moduleComponentVolume.setSensitiveDetector(sensDet);
-        }
+        //if (xComp.isSensitive()) {
+          //moduleComponentVolume.setSensitiveDetector(sensDet);
+        //}
         DD4hep::Geometry::Position offset(
           0,
           -0.5 * totalModuleComponentThickness + integratedModuleComponentThickness,
@@ -96,6 +96,7 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
       lcdd.material("Silicon")); //TODO: change back material
     //rodVolume.setVisAttributes(lcdd, "rme");
     rodVolume.setVisAttributes(lcdd.invisible());
+    rodVolume.setSensitiveDetector(sensDet);
     // handle repeat tag in xml
     double layerThickness;
     unsigned int numLayers;
@@ -116,8 +117,9 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
       double phi = 0;
       for (unsigned int layerIndex = 0; layerIndex < numLayers; ++layerIndex) {
         if (layerIndex > 1) { 
-          idxLay++;
         }
+          idxLay++;
+        std::cout<<idxLay<<std::endl;
         r = layer_rmin + layerIndex*layerThickness;
         // definition of layer volumes
         DD4hep::Geometry::Tube layerShape(r, r + layerThickness, xLayer.dz());
@@ -136,6 +138,7 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
           DD4hep::Geometry::RotationZ lRotation(phi + lModuleTwistAngle + 0.5*M_PI);
           PlacedVolume placedRodVolume = layerVolume.placeVolume(rodVolume, lTranslation * lRotation );
           placedRodVolume.addPhysVolID("rod", phiIndex);
+          GenericTrackerBarrelWorld.setPlacement(placedRodVolume);
         }
       }
       // placement of modules within rods
