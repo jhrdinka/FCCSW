@@ -1,4 +1,6 @@
 
+#include "GenericTrackerCommon.h"
+
 #include "DD4hep/DetFactoryHelper.h"
 
 #include "ACTS/Plugins/DD4hepPlugins/IDetExtension.hpp"
@@ -30,93 +32,124 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
   // get sensitive detector type from xml
   DD4hep::XML::Dimension sdTyp = xmlElement.child("sensitive"); // retrieve the type
   if ( xmlDet.isSensitive() ) {
-      sensDet.setType(sdTyp.typeStr());                             // set for the whole detector
+      sensDet.setType(sdTyp.typeStr()); // set for the whole detector
   }
-
 
   // envelope volume with the max dimensions of tracker for visualization etc.
   DD4hep::Geometry::Tube envelopeShape(dimensions.rmin(), dimensions.rmax(), dimensions.dz());
   Volume envelopeVolume(detName, envelopeShape, lcdd.air());
   envelopeVolume.setVisAttributes(lcdd.invisible());
 
-  // definition of module volume (smallest independent subdetector) 
-  xml_comp_t xModule = xmlElement.child("module");
-  Volume moduleVolume(
-    "GenericTrackerBarrel_rod_module",
-    DD4hep::Geometry::Box( xModule.width(), xModule.thickness(), xModule.length()),
-    lcdd.air());
-  moduleVolume.setVisAttributes(lcdd, xModule.visStr());
+  double stereo_offset = 0;
+  // loop over 'layer' nodes in xml
+  unsigned int idxLay = 0;
+  for (xml_coll_t xLayerColl(xmlElement, _U(layer)); xLayerColl; ++xLayerColl, ++idxLay) {
+    xml_comp_t xLayer = xLayerColl;
+    // definition of module volume (smallest independent subdetector) 
+    // defined first because its dimensions are used both in its substructure (module_components)
+    // and superstructure (rods)
+    xml_comp_t xModule = getNodeByName(xmlElement, "module", xLayer.attr<std::string>("module"));
+    // define the module whose name was given in the "layer" xml Element
+    Volume moduleVolume(
+      "GenericTrackerBarrel_layer" + std::to_string(idxLay) + "_rod_module",
+      DD4hep::Geometry::Box( 0.5 * xModule.width(), 0.5 * xModule.thickness(), 0.5 * xModule.length()),
+      lcdd.material("Carbon")); //TODO: change back material
+    moduleVolume.setVisAttributes(lcdd, xModule.visStr());
 
-  // definition of rod volume (longitudinal arrangement of modules)
-  Volume rodVolume(
-    "GenericTrackerBarrel_rod",
-    DD4hep::Geometry::Box(xModule.width(), xModule.thickness(), dimensions.dz()),
-    lcdd.air());
-  rodVolume.setVisAttributes(lcdd, "comp3");
-  DetElement Rod(GenericTrackerBarrelWorld, "GenericTrackerBarrel_rod", 3);
-  
-  // substructure of module (add the moment just 'module components', i.e. sheets of different materials)
-  unsigned int idxSubMod = 0;
-  // get total thickness of module
-  double totalModuleComponentThickness = 0;
-  for (xml_coll_t xCompColl(xModule, _U(module_component)); xCompColl; ++xCompColl, ++idxSubMod) {
-      xml_comp_t xComp = xCompColl;
-      totalModuleComponentThickness += xComp.thickness();
-  }
-  // second pass: actual placements, now knowing the thickness of the module
-  double integratedModuleComponentThickness = 0;
-  for (xml_coll_t xCompColl(xModule, _U(module_component)); xCompColl; ++xCompColl, ++idxSubMod) {
-      xml_comp_t xComp = xCompColl;
-      std::string subModuleName = "GenericTrackerBarrel_rod_module_component_" + xComp.materialStr();
-      Volume moduleComponentVolume(
-        subModuleName,
-        DD4hep::Geometry::Box(xModule.width(), xModule.thickness(), dimensions.dz()),
-        lcdd.material(xComp.materialStr()));
-      moduleComponentVolume.setVisAttributes(lcdd, xComp.visStr());
-      if (xComp.isSensitive()) {
-        moduleComponentVolume.setSensitiveDetector(sensDet);
-      }
-      DD4hep::Geometry::Position offset(
-        0,
-        -0.5 * totalModuleComponentThickness + integratedModuleComponentThickness,
-        0);
-      integratedModuleComponentThickness += xComp.thickness();
-      PlacedVolume placedModuleComponentVolume = moduleVolume.placeVolume(moduleComponentVolume, offset);
-      placedModuleComponentVolume.addPhysVolID("module_component", idxSubMod);
-  }
+    //moduleVolume.setSensitiveDetector(sensDet);
 
-  // placement of modules within rods
-  double overlap = 0.9;
-  double stereo_offset = .2;
-  unsigned int zRepeat = static_cast<int>(dimensions.dz() / (xModule.length() - overlap)) + 1;
-  for (unsigned int zIndex = 0; zIndex < zRepeat; ++zIndex) {
-      stereo_offset *= -1.;
-      DD4hep::Geometry::Position moduleOffset(0, stereo_offset,  zIndex * 2 * (xModule.length() - overlap) - dimensions.dz() + xModule.length() - overlap);
-      PlacedVolume placedModuleVolume = rodVolume.placeVolume(moduleVolume, moduleOffset);
-      placedModuleVolume.addPhysVolID("module", zIndex);
-  }
-
-  // placement of rods within layers/barrel
-  xml_comp_t xLayers = xmlElement.child("layer");
-  unsigned int numLayers = xLayers.repeat();
-  double  layerThickness = (dimensions.rmax() - dimensions.rmin()) / numLayers;
-  unsigned int nPhi = 0;
-  double r = 0;
-  double phi = 0;
-  for (unsigned int layerIndex = 0; layerIndex < numLayers; ++layerIndex) {
-    DetElement Layer(GenericTrackerBarrelWorld, "GenericTrackerBarrel_layer" + std::to_string(layerIndex), layerIndex);
-    r = dimensions.rmin() + layerIndex*layerThickness;
-    // approximation of tklayout values
-    nPhi = static_cast<unsigned int>(std::max(14., r* 7. / 8.));
-    for (unsigned int phiIndex = 0; phiIndex < nPhi; ++phiIndex) {
-      phi = 2*M_PI * static_cast<double>(phiIndex) / static_cast<double>(nPhi);
-      DD4hep::Geometry::Translation3D lTranslation(r*cos(phi), r*sin(phi), 0);
-      const double lModuleTwistAngle = 0.05*M_PI;
-      DD4hep::Geometry::RotationZ lRotation(phi + lModuleTwistAngle + 0.5*M_PI);
-      PlacedVolume placedRodVolume = envelopeVolume.placeVolume(rodVolume, lTranslation * lRotation );
-      placedRodVolume.addPhysVolID("rod", layerIndex * nPhi +  phiIndex);
+    /// @todo: handle analogously to module
+    xml_comp_t xModuleComponents = xmlElement.child("module_components");
+    unsigned int idxSubMod = 0;
+    // get total thickness of module
+    double totalModuleComponentThickness = 0;
+    for (xml_coll_t xCompColl(xModuleComponents, _U(module_component)); xCompColl; ++xCompColl, ++idxSubMod) {
+        xml_comp_t xComp = xCompColl;
+        totalModuleComponentThickness += xComp.thickness();
     }
-  }
+    // second pass: define module components and place in module
+    idxSubMod = 0;
+    double integratedModuleComponentThickness = 0;
+    for (xml_coll_t xCompColl(xModuleComponents, _U(module_component)); xCompColl; ++xCompColl, ++idxSubMod) {
+        xml_comp_t xComp = xCompColl;
+        std::string moduleComponentName = "GenericTrackerBarrel_layer" + std::to_string(idxLay) + "_rod_module_component_" + xComp.materialStr();
+        Volume moduleComponentVolume(
+          moduleComponentName,
+          DD4hep::Geometry::Box(0.5 * xModule.width(), 0.5 * xComp.thickness(), 0.5 * xModule.length()),
+          lcdd.material(xComp.materialStr()));
+        moduleComponentVolume.setVisAttributes(lcdd, xComp.visStr());
+        if (xComp.isSensitive()) {
+          moduleComponentVolume.setSensitiveDetector(sensDet);
+        }
+        DD4hep::Geometry::Position offset(
+          0,
+          -0.5 * totalModuleComponentThickness + integratedModuleComponentThickness,
+          0);
+        integratedModuleComponentThickness += xComp.thickness();
+        PlacedVolume placedModuleComponentVolume = moduleVolume.placeVolume(moduleComponentVolume, offset);
+        placedModuleComponentVolume.addPhysVolID("module_component", idxSubMod);
+    }
+    // definition of rod volume (longitudinal arrangement of modules)
+    Volume rodVolume(
+      "GenericTrackerBarrel_layer" + std::to_string(idxLay) + "_rod",
+      DD4hep::Geometry::Box(0.5 * xModule.width(), 0.5 * xModule.thickness() , xLayer.dz()),
+      lcdd.material("Silicon")); //TODO: change back material
+    //rodVolume.setVisAttributes(lcdd, "rme");
+    rodVolume.setVisAttributes(lcdd.invisible());
+    // handle repeat tag in xml
+    double layerThickness;
+    unsigned int numLayers;
+    double layer_rmin;
+    if (xLayer.hasAttr("repeat")) {
+      // "repeat" layers  equidistant between rmin and rmax
+      numLayers = xLayer.repeat();
+      layerThickness = (xLayer.rmax() - xLayer.rmin()) / numLayers;
+      layer_rmin = xLayer.rmin();
+    } else {
+      // just one layer per xml element ( at position r )
+      numLayers = 1;
+      layerThickness = 10;
+      layer_rmin = xLayer.r();
+    }
+      unsigned int nPhi = 0;
+      double r = 0;
+      double phi = 0;
+      for (unsigned int layerIndex = 0; layerIndex < numLayers; ++layerIndex) {
+        if (layerIndex > 1) { 
+          idxLay++;
+        }
+        r = layer_rmin + layerIndex*layerThickness;
+        // definition of layer volumes
+        DD4hep::Geometry::Tube layerShape(r, r + layerThickness, xLayer.dz());
+        Volume layerVolume("GenericTrackerBarrel_layer" + std::to_string(idxLay), layerShape, lcdd.air());
+        layerVolume.setVisAttributes(lcdd.invisible());
+        PlacedVolume placedLayerVolume = envelopeVolume.placeVolume(layerVolume);
+        placedLayerVolume.addPhysVolID("layer", idxLay);
+        // approximation of tklayout values
+        nPhi = static_cast<unsigned int>( 8 * r / xModule.width())+1;
+        for (unsigned int phiIndex = 0; phiIndex < nPhi; ++phiIndex) {
+          phi = 2*M_PI * static_cast<double>(phiIndex) / static_cast<double>(nPhi);
+          DD4hep::Geometry::Translation3D lTranslation(r*cos(phi), r*sin(phi), 0);
+          /// @todo: move moduletwistangle to xml (maybe with default if it is not set? 
+          /// does not seem like a crucial / often changed parameter)
+          const double lModuleTwistAngle = 0.05*M_PI;
+          DD4hep::Geometry::RotationZ lRotation(phi + lModuleTwistAngle + 0.5*M_PI);
+          PlacedVolume placedRodVolume = layerVolume.placeVolume(rodVolume, lTranslation * lRotation );
+          placedRodVolume.addPhysVolID("rod", phiIndex);
+        }
+      }
+      // placement of modules within rods
+      /// @todo move to xml (maybe with defaults?)
+      double overlap = 0.9;
+      unsigned int zRepeat = static_cast<int>(xLayer.dz() / (0.5 * xModule.length() - overlap));
+      for (unsigned int zIndex = 0; zIndex < zRepeat; ++zIndex) {
+          stereo_offset *= -1.;
+          DD4hep::Geometry::Translation3D moduleOffset(0, stereo_offset,  
+            zIndex * 2 * (0.5*xModule.length() - overlap) - xLayer.dz() + 0.5*xModule.length() - overlap);
+          PlacedVolume placedModuleVolume = rodVolume.placeVolume(moduleVolume, moduleOffset * DD4hep::Geometry::RotationX(0));
+          placedModuleVolume.addPhysVolID("module", zIndex);
+      }
+    }
 
   Volume motherVol = lcdd.pickMotherVolume(GenericTrackerBarrelWorld);
 
@@ -125,8 +158,6 @@ static DD4hep::Geometry::Ref_t createGenericTrackerBarrel (
   //GenericTrackerBarrelWorld.addExtension<Acts::IDetExtension>(WorldDetExt); 
   ////placements of the modules to be handed over to the tracking geometry
   //std::vector<std::shared_ptr<const Acts::Transform3D>> placements;
-
-
 
   PlacedVolume placedGenericTrackerBarrel = motherVol.placeVolume(envelopeVolume);
   placedGenericTrackerBarrel.addPhysVolID("system", GenericTrackerBarrelWorld.id());
