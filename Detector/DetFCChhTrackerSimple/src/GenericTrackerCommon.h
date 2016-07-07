@@ -3,5 +3,5 @@
 
 #include "DD4hep/DetFactoryHelper.h"
 
-xml_comp_t getNodeByName(xml_h mother, const char* nodeName, std::string attrName);
+xml_comp_t getNodeByAttr(xml_h mother, const char* nodeName, const char* attrName, std::string attrValue);
 #endif

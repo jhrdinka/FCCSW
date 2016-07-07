@@ -44,7 +44,7 @@ static DD4hep::Geometry::Ref_t createGenericTrackerEndcap (
   for (xml_coll_t xLayerColl(xmlElement, _U(layer)); xLayerColl; ++xLayerColl, ++idxLay) {
     xml_comp_t xLayer = xLayerColl;
 
-    xml_comp_t xModule = getNodeByName(xmlElement, "module", xLayer.attr<std::string>("module"));
+    xml_comp_t xModule = getNodeByAttr(xmlElement, "module", "name", xLayer.attr<std::string>("module"));
     //TODO: define modules
     //TODO: add PhysVolIDs
 
