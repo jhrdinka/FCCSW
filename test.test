@@ -1,0 +1,242 @@
+# setting LC_ALL to "C"
+# --> Including file '/home/vali/FCC/FCCSW/Examples/options/geant_fullsim_pgun_geantino.py'
+# <-- End of file '/home/vali/FCC/FCCSW/Examples/options/geant_fullsim_pgun_geantino.py'
+ApplicationMgr      DEBUG Getting my own properties
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to FCCSW version HEAD
+                                          running on vali-Lenovo-U410 on Sat Jul  9 22:59:51 2016
+====================================================================================================================================
+ApplicationMgr      DEBUG Loading declared DLL's
+
+*************************************************************
+ Geant4 version Name: geant4-10-02 [MT]   (4-December-2015)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+SimG4Svc            DEBUG Handle for private toolSimG4DD4hepDetector successfully created and stored.
+SimG4Svc            DEBUG Handle for private toolG4FTFP_BERT successfully created and stored.
+SimG4Svc            DEBUG Handle for private toolSimG4FullSimActions successfully created and stored.
+SimG4Svc            DEBUG Handle for private toolSimG4ConstantMagneticFieldTool successfully created and stored.
+ApplicationMgr       INFO Application Manager Configured successfully
+ServiceManager      DEBUG Initializing service EventDataSvc
+EventDataSvc        DEBUG Service base class initialized successfully
+IncidentSvc         DEBUG Service base class initialized successfully
+EventPersistenc...  DEBUG Service base class initialized successfully
+ServiceManager      DEBUG Initializing service GeoSvc
+GeoSvc              DEBUG Service base class initialized successfully
+GeoSvc               INFO loading geometry from file:  'file:Detector/DetFCChhTrackerSimple/compact/FCChh_GenericTracker.xml'
+DocumentHandler  INFO  +++ Loading document URI: file:Detector/DetFCChhTrackerSimple/compact/FCChh_GenericTracker.xml
+DocumentHandler  INFO  +++ Document file:Detector/DetFCChhTrackerSimple/compact/FCChh_GenericTracker.xml succesfully parsed with TinyXML .....
+DocumentHandler  INFO  +++ Loading document URI: Detector/DetFCChhTrackerSimple/compact/../../DetCommon/compact/elements.xml
+DocumentHandler  INFO  +++ Document Detector/DetFCChhTrackerSimple/compact/../../DetCommon/compact/elements.xml succesfully parsed with TinyXML .....
+DocumentHandler  INFO  +++ Loading document URI: Detector/DetFCChhTrackerSimple/compact/../../DetCommon/compact/materials.xml
+DocumentHandler  INFO  +++ Document Detector/DetFCChhTrackerSimple/compact/../../DetCommon/compact/materials.xml succesfully parsed with TinyXML .....
+LCDD             INFO   *********** created World volume with size :    1000    1000    1000
+Compact          INFO  ++ Converted subdetector:GenericTrackerEndcap of type GenericTrackerEndcap [Geant4SensDet]
+Compact          INFO  ++ Converted subdetector:GenericTrackerBarrel of type GenericTrackerBarrel [Geant4Sensdet]
+LCDD             INFO  +++ Patching names of anonymous shapes....
+VolumeManager    INFO   - populating volume ids - be patient ...
+VolumeManager    INFO   - populating volume ids - done
+VolumeManager    INFO  +++ Volume manager populated and loaded.
+GeoSvc               INFO DD4Hep geometry SUCCESSFULLY built
+GeoSvc               INFO Geant4 geometry SUCCESSFULLY built
+ServiceManager      DEBUG Initializing service SimG4Svc
+SimG4Svc            DEBUG Service base class initialized successfully
+ToolSvc             DEBUG Service base class initialized successfully
+SimG4Svc.SimG4D...  DEBUG Property update for OutputLevel : new value = 2
+SimG4Svc.SimG4D...  DEBUG Initialize base class GaudiCommon<AlgTool>
+SimG4Svc.SimG4D...  DEBUG could not locate CounterSummarySvc, no counter summary will be made
+SimG4Svc.SimG4D...  DEBUG List of ALL properties of SimG4DD4hepDetector/SimG4Svc.SimG4DD4hepDetector  #properties = 21
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'ContextService':AlgContextSvc
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'StatEntityList':[  ]
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'CounterList':[ '.*' ]
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'UseEfficiencyRowFormat':True
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'EfficiencyRowFormat': |*%|-48.48s|%|50t||%|10d| |%|11.5g| |(%|#9.6g| +- %|-#9.6g|)%%|   -------   |   -------   |
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'RegularRowFormat': | %|-48.48s|%|50t||%|10d| |%|11.7g| |%|#11.5g| |%|#11.5g| |%|#12.5g| |%|#12.5g| |
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'StatTableHeader': |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'GlobalTimeOffset':0.0000000
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'RootInTES':
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'Context':
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'TypePrint':True
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'StatPrint':True
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'PropertiesPrint':False
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'ErrorsPrint':True
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'AuditFinalize':False
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'AuditStop':False
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'AuditStart':False
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'AuditInitialize':False
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'AuditTools':False
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'OutputLevel':2
+SimG4Svc.SimG4D...  DEBUG Property ['Name': Value] =  'MonitorService':MonitorSvc
+SimG4Svc.SimG4C...  DEBUG Property update for OutputLevel : new value = 2
+SimG4Svc.SimG4C...  DEBUG Initialize base class GaudiCommon<AlgTool>
+SimG4Svc.SimG4C...  DEBUG could not locate CounterSummarySvc, no counter summary will be made
+SimG4Svc.SimG4C...  DEBUG List of ALL properties of SimG4ConstantMagneticFieldTool/SimG4Svc.SimG4ConstantMagneticFieldTool  #properties = 33
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'FieldZMax':6000.0000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'FieldRMax':6000.0000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'FieldComponentZ':-0.0060000000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'FieldComponentY':0.0000000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'FieldComponentX':0.0000000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'IntegratorStepper':NystromRK4
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'MaximumStep':1000.0000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'MaximumEpsilon':0.0000000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'MinimumEpsilon':0.0000000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'DeltaOneStep':0.0000000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'DeltaChord':0.0000000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'FieldOn':False
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'ContextService':AlgContextSvc
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'StatEntityList':[  ]
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'CounterList':[ '.*' ]
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'UseEfficiencyRowFormat':True
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'EfficiencyRowFormat': |*%|-48.48s|%|50t||%|10d| |%|11.5g| |(%|#9.6g| +- %|-#9.6g|)%%|   -------   |   -------   |
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'RegularRowFormat': | %|-48.48s|%|50t||%|10d| |%|11.7g| |%|#11.5g| |%|#11.5g| |%|#12.5g| |%|#12.5g| |
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'StatTableHeader': |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'GlobalTimeOffset':0.0000000
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'RootInTES':
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'Context':
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'TypePrint':True
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'StatPrint':True
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'PropertiesPrint':False
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'ErrorsPrint':True
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'AuditFinalize':False
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'AuditStop':False
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'AuditStart':False
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'AuditInitialize':False
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'AuditTools':False
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'OutputLevel':2
+SimG4Svc.SimG4C...  DEBUG Property ['Name': Value] =  'MonitorService':MonitorSvc
+Geant4Converter  INFO  ++ Created G4  Element: ARGON (AR)   Z = 18.0   N =    40   A = 39.948 g/mole
+         --->  Isotope:  AR36   Z = 18   N =  36   A =  35.97 g/mole   abundance:  0.337 %
+         --->  Isotope:  AR38   Z = 18   N =  38   A =  37.96 g/mole   abundance:  0.063 %
+         --->  Isotope:  AR40   Z = 18   N =  40   A =  39.96 g/mole   abundance: 99.600 %
+Geant4Converter  INFO  ++ Created G4  Material:    Argon    density:  1.662 mg/cm3  RadL: 117.622 m    Nucl.Int.Length: 719.890 m  
+                       Imean: 188.000 eV   temperature: 273.15 K  pressure:   1.00 atm
+
+   --->  Element: ARGON (AR)   Z = 18.0   N =    40   A = 39.948 g/mole
+         --->  Isotope:  AR36   Z = 18   N =  36   A =  35.97 g/mole   abundance:  0.337 %
+         --->  Isotope:  AR38   Z = 18   N =  38   A =  37.96 g/mole   abundance:  0.063 %
+         --->  Isotope:  AR40   Z = 18   N =  40   A =  39.96 g/mole   abundance: 99.600 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+Geant4Converter  INFO  ++ Created G4  Element: SILICON (SI)   Z = 14.0   N =    28   A = 28.085 g/mole
+         --->  Isotope:  SI28   Z = 14   N =  28   A =  27.98 g/mole   abundance: 92.230 %
+         --->  Isotope:  SI29   Z = 14   N =  29   A =  28.98 g/mole   abundance:  4.683 %
+         --->  Isotope:  SI30   Z = 14   N =  30   A =  29.97 g/mole   abundance:  3.087 %
+Geant4Converter  INFO  ++ Created G4  Material:  Silicon    density:  2.330 g/cm3   RadL:   9.366 cm   Nucl.Int.Length:  45.660 cm 
+                       Imean: 173.000 eV 
+
+   --->  Element: SILICON (SI)   Z = 14.0   N =    28   A = 28.085 g/mole
+         --->  Isotope:  SI28   Z = 14   N =  28   A =  27.98 g/mole   abundance: 92.230 %
+         --->  Isotope:  SI29   Z = 14   N =  29   A =  28.98 g/mole   abundance:  4.683 %
+         --->  Isotope:  SI30   Z = 14   N =  30   A =  29.97 g/mole   abundance:  3.087 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+Geant4Converter  INFO  ++ Handled 35 solids.
+Geant4Converter  INFO  ++ Handled 0 visualization attributes.
+Geant4Converter  INFO  ++ Handled 0 limit sets.
+Geant4Converter  INFO  ++ Handled 0 regions.
+Geant4Converter  INFO  ++ Convert Volume layer0_rod_module_component0_Silicon: 0x2fdbe30 TGeoBBox/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer0_rod_module_component0_Silicon converted: 0x2fdbe30 ---> G4: 0x2c5f550
+Geant4Converter  INFO  ++ Convert Volume layer1_rod_module_component0_Silicon: 0x2fe0ac0 TGeoBBox/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer1_rod_module_component0_Silicon converted: 0x2fe0ac0 ---> G4: 0x2c5f6e0
+Geant4Converter  INFO  ++ Convert Volume petal                           : 0x2e24760 TGeoTrd2/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + petal converted: 0x2e24760 ---> G4: 0x326fda0
+Geant4Converter  INFO  ++ Convert Volume petal                           : 0x2fc6ca0 TGeoTrd2/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + petal converted: 0x2fc6ca0 ---> G4: 0x326fe40
+Geant4Converter  INFO  ++ Convert Volume module                          : 0x2fdc270 TGeoBBox/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Created G4  Element: NITROGEN (N)   Z =  7.0   N =    14   A = 14.007 g/mole
+         --->  Isotope:   N14   Z =  7   N =  14   A =  14.00 g/mole   abundance: 99.632 %
+         --->  Isotope:   N15   Z =  7   N =  15   A =  15.00 g/mole   abundance:  0.368 %
+Geant4Converter  INFO  ++ Created G4  Element: OXYGEN (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+Geant4Converter  INFO  ++ Created G4  Material:      Air    density:  1.200 mg/cm3  RadL: 305.288 m    Nucl.Int.Length: 712.827 m  
+                       Imean:  85.644 eV   temperature: 273.15 K  pressure:   1.00 atm
+
+   --->  Element: NITROGEN (N)   Z =  7.0   N =    14   A = 14.007 g/mole
+         --->  Isotope:   N14   Z =  7   N =  14   A =  14.00 g/mole   abundance: 99.632 %
+         --->  Isotope:   N15   Z =  7   N =  15   A =  15.00 g/mole   abundance:  0.368 %
+          ElmMassFraction:  75.40 %  ElmAbundance  78.29 % 
+
+   --->  Element: OXYGEN (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  23.40 %  ElmAbundance  21.27 % 
+
+   --->  Element: ARGON (AR)   Z = 18.0   N =    40   A = 39.948 g/mole
+         --->  Isotope:  AR36   Z = 18   N =  36   A =  35.97 g/mole   abundance:  0.337 %
+         --->  Isotope:  AR38   Z = 18   N =  38   A =  37.96 g/mole   abundance:  0.063 %
+         --->  Isotope:  AR40   Z = 18   N =  40   A =  39.96 g/mole   abundance: 99.600 %
+          ElmMassFraction:   1.20 %  ElmAbundance   0.44 % 
+
+Geant4Converter  INFO  ++ Volume     + module converted: 0x2fdc270 ---> G4: 0x32708f0
+Geant4Converter  INFO  ++ Convert Volume module                          : 0x2fe0fe0 TGeoBBox/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + module converted: 0x2fe0fe0 ---> G4: 0x32711e0
+Geant4Converter  INFO  ++ Convert Volume GenericTrackerBarrel_layer1_rod : 0x2fe1340 TGeoBBox/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + GenericTrackerBarrel_layer1_rod converted: 0x2fe1340 ---> G4: 0x3271390
+Geant4Converter  INFO  ++ Convert Volume layer0                          : 0x2e24b90 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer0 converted: 0x2e24b90 ---> G4: 0x32714e0
+Geant4Converter  INFO  ++ Convert Volume layer1                          : 0x2e30140 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer1 converted: 0x2e30140 ---> G4: 0x32715c0
+Geant4Converter  INFO  ++ Convert Volume layer2                          : 0x2fc7070 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer2 converted: 0x2fc7070 ---> G4: 0x32716e0
+Geant4Converter  INFO  ++ Convert Volume layer3                          : 0x2fc8e70 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer3 converted: 0x2fc8e70 ---> G4: 0x3271800
+Geant4Converter  INFO  ++ Convert Volume layer4                          : 0x2fcac70 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer4 converted: 0x2fcac70 ---> G4: 0x3271920
+Geant4Converter  INFO  ++ Convert Volume layer5                          : 0x2fcca50 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer5 converted: 0x2fcca50 ---> G4: 0x3271a40
+Geant4Converter  INFO  ++ Convert Volume layer6                          : 0x2fce830 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer6 converted: 0x2fce830 ---> G4: 0x3271b60
+Geant4Converter  INFO  ++ Convert Volume layer7                          : 0x2fd0610 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer7 converted: 0x2fd0610 ---> G4: 0x3271c80
+Geant4Converter  INFO  ++ Convert Volume layer8                          : 0x2fd23f0 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer8 converted: 0x2fd23f0 ---> G4: 0x3271da0
+Geant4Converter  INFO  ++ Convert Volume layer9                          : 0x2fd41d0 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer9 converted: 0x2fd41d0 ---> G4: 0x3271ec0
+Geant4Converter  INFO  ++ Convert Volume layer10                         : 0x2fd5fb0 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer10 converted: 0x2fd5fb0 ---> G4: 0x3271fe0
+Geant4Converter  INFO  ++ Convert Volume layer11                         : 0x2fd7d90 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer11 converted: 0x2fd7d90 ---> G4: 0x3272100
+Geant4Converter  INFO  ++ Convert Volume GenericTrackerBarrel_layer0_rod : 0x2fdc600 TGeoBBox/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + GenericTrackerBarrel_layer0_rod converted: 0x2fdc600 ---> G4: 0x3272290
+Geant4Converter  INFO  ++ Convert Volume layer1                          : 0x2fe18b0 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer1 converted: 0x2fe18b0 ---> G4: 0x32723a0
+Geant4Converter  INFO  ++ Convert Volume layer2                          : 0x10dac70 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer2 converted: 0x10dac70 ---> G4: 0x32724c0
+Geant4Converter  INFO  ++ Convert Volume GenericTrackerEndcap            : 0x2e24360 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + GenericTrackerEndcap converted: 0x2e24360 ---> G4: 0x32726b0
+Geant4Converter  INFO  ++ Convert Volume layer0                          : 0x2fdcd00 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer0 converted: 0x2fdcd00 ---> G4: 0x32727d0
+Geant4Converter  INFO  ++ Convert Volume layer3                          : 0x2feab10 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer3 converted: 0x2feab10 ---> G4: 0x32728f0
+Geant4Converter  INFO  ++ Convert Volume layer4                          : 0x2fef660 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer4 converted: 0x2fef660 ---> G4: 0x3272a10
+Geant4Converter  INFO  ++ Convert Volume layer5                          : 0x2ff5f80 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer5 converted: 0x2ff5f80 ---> G4: 0x3272b30
+Geant4Converter  INFO  ++ Convert Volume layer6                          : 0x2ffd890 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer6 converted: 0x2ffd890 ---> G4: 0x3272c50
+Geant4Converter  INFO  ++ Convert Volume layer7                          : 0x3006760 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer7 converted: 0x3006760 ---> G4: 0x3272d70
+Geant4Converter  INFO  ++ Convert Volume layer8                          : 0x3010da0 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + layer8 converted: 0x3010da0 ---> G4: 0x3272e90
+Geant4Converter  INFO  ++ Convert Volume GenericTrackerEndcap            : 0x2e23f60 TGeoCompositeShape/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + GenericTrackerEndcap converted: 0x2e23f60 ---> G4: 0x3272fb0
+Geant4Converter  INFO  ++ Convert Volume GenericTrackerBarrel            : 0x2fdb9c0 TGeoConeSeg/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + GenericTrackerBarrel converted: 0x2fdb9c0 ---> G4: 0x3273180
+Geant4Converter  INFO  ++ Convert Volume world_volume                    : 0x2d870f0 TGeoBBox/TGeoVolume assembly:NO 
+Geant4Converter  INFO  ++ Volume     + world_volume converted: 0x2d870f0 ---> G4: 0x32732d0
+Geant4Converter  INFO  ++ Handled 33 volumes.
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4.
+VolumeManager    INFO   - populating volume ids - be patient ...
+VolumeManager    INFO   - populating volume ids - done
+VolumeManager    INFO  +++ Volume manager populated and loaded.
+SimG4Svc            FATAL in sysInitialize(): standard std::exception is caught
+SimG4Svc            ERROR ConstructSDandField: FATAL Failed to create Geant4 sensitive detector GenericTrackerBarrel of type Geant4Geant4Sensdet.
+ServiceManager      ERROR Unable to initialize Service: SimG4Svc
+ApplicationMgr       INFO Application Manager Terminated successfully

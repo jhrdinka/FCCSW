@@ -27,14 +27,19 @@ static Ref_t create_element(LCDD& lcdd, xml_h xml, SensitiveDetector sens)
     cylinderVolume.addExtension<Acts::IDetExtension>(detvolume);
     //make Volume
     DD4hep::XML::Dimension x_det_dim(x_det.dimensions());
-    Tube tube_shape(x_det_dim.rmin(),x_det_dim.rmax(),x_det_dim.dz());
-    Volume tube_vol(det_name,tube_shape,lcdd.air()); //air at the moment change later
-    tube_vol.setVisAttributes(lcdd, x_det_dim.visStr());
-    //go trough possible layers
-    size_t layer_num = 0;
-    
-    
-    for (xml_coll_t j(xml,_U(layer));j;++j)
+    double z = x_det_dim.z();
+    Tube tracker_shape(x_det_dim.rmin(),x_det_dim.rmax(),z);
+    Volume tracker_vol(x_det.nameStr()+"_envelope",tracker_shape, air);
+    //Vizualization
+    tracker_vol.setVisAttributes(lcdd.invisible());
+//    tracker_vol.setVisAttributes(lcdd, x_det.visStr());
+    //Set sensitive type tracker
+    sens.setType("SimpleTrackerSD");
+
+    int layer_num = 0;
+
+    //Go through layers
+    for (xml_coll_t j(e,_U(layer)); j; ++j )
     {
         xml_comp_t x_layer  = j;
         double l_rmin       = x_layer.inner_r();

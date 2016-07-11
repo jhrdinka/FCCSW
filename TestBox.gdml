@@ -1,0 +1,1724 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+  <define/>
+
+  <materials>
+    <isotope N="28" Z="14" name="SI280x4738410">
+      <atom unit="g/mole" value="27.9769"/>
+    </isotope>
+    <isotope N="29" Z="14" name="SI290x4738b00">
+      <atom unit="g/mole" value="28.9765"/>
+    </isotope>
+    <isotope N="30" Z="14" name="SI300x4746370">
+      <atom unit="g/mole" value="29.9738"/>
+    </isotope>
+    <element name="SILICON0x4738a10">
+      <fraction n="0.922296077703922" ref="SI280x4738410"/>
+      <fraction n="0.0468319531680468" ref="SI290x4738b00"/>
+      <fraction n="0.0308719691280309" ref="SI300x4746370"/>
+    </element>
+    <material name="Silicon0x47386e0" state="solid">
+      <P unit="pascal" value="101324.845390854"/>
+      <MEE unit="eV" value="173"/>
+      <D unit="g/cm3" value="2.33"/>
+      <fraction n="1" ref="SILICON0x4738a10"/>
+    </material>
+    <isotope N="14" Z="7" name="N140x4777000">
+      <atom unit="g/mole" value="14.0031"/>
+    </isotope>
+    <isotope N="15" Z="7" name="N150x4777050">
+      <atom unit="g/mole" value="15.0001"/>
+    </isotope>
+    <element name="NITROGEN0x4776c80">
+      <fraction n="0.99632" ref="N140x4777000"/>
+      <fraction n="0.00368" ref="N150x4777050"/>
+    </element>
+    <isotope N="16" Z="8" name="O160x4777340">
+      <atom unit="g/mole" value="15.9949"/>
+    </isotope>
+    <isotope N="17" Z="8" name="O170x47388d0">
+      <atom unit="g/mole" value="16.9991"/>
+    </isotope>
+    <isotope N="18" Z="8" name="O180x4777420">
+      <atom unit="g/mole" value="17.9992"/>
+    </isotope>
+    <element name="OXYGEN0x4776f20">
+      <fraction n="0.99757" ref="O160x4777340"/>
+      <fraction n="0.00038" ref="O170x47388d0"/>
+      <fraction n="0.00205" ref="O180x4777420"/>
+    </element>
+    <isotope N="36" Z="18" name="AR360x47372d0">
+      <atom unit="g/mole" value="35.9675"/>
+    </isotope>
+    <isotope N="38" Z="18" name="AR380x4738110">
+      <atom unit="g/mole" value="37.9627"/>
+    </isotope>
+    <isotope N="40" Z="18" name="AR400x4738180">
+      <atom unit="g/mole" value="39.9624"/>
+    </isotope>
+    <element name="ARGON0x4737d50">
+      <fraction n="0.003365" ref="AR360x47372d0"/>
+      <fraction n="0.000632" ref="AR380x4738110"/>
+      <fraction n="0.996003" ref="AR400x4738180"/>
+    </element>
+    <material name="Air0x4776b00" state="gas">
+      <P unit="pascal" value="101324.845390854"/>
+      <MEE unit="eV" value="85.6436471190876"/>
+      <D unit="g/cm3" value="0.0012"/>
+      <fraction n="0.754" ref="NITROGEN0x4776c80"/>
+      <fraction n="0.234" ref="OXYGEN0x4776f20"/>
+      <fraction n="0.012" ref="ARGON0x4737d50"/>
+    </material>
+  </materials>
+
+  <solids>
+    <trd lunit="mm" name="petal0x41a0480" x1="10.3553390593274" x2="248.528137423857" y1="1.425" y2="1.425" z="575"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer00x4752fc0" rmax1="600" rmax2="600" rmin1="25" rmin2="25" startphi="0" z="437.5"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer10x4753100" rmax1="600" rmax2="600" rmin1="25" rmin2="25" startphi="0" z="437.5"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer20x4753240" rmax1="600" rmax2="600" rmin1="25" rmin2="25" startphi="0" z="437.5"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer30x4753380" rmax1="600" rmax2="600" rmin1="25" rmin2="25" startphi="0" z="437.5"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer40x47534c0" rmax1="600" rmax2="600" rmin1="25" rmin2="25" startphi="0" z="437.5"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer50x4753600" rmax1="600" rmax2="600" rmin1="25" rmin2="25" startphi="0" z="437.5"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer60x4753740" rmax1="600" rmax2="600" rmin1="25" rmin2="25" startphi="0" z="437.5"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer70x4753880" rmax1="600" rmax2="600" rmin1="25" rmin2="25" startphi="0" z="437.5"/>
+    <trd lunit="mm" name="petal0x47539c0" x1="10.3553390593274" x2="994.733870038988" y1="1.425" y2="1.425" z="2376.5"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer80x4753a80" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer90x4753bc0" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer100x4753d00" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer110x4753e40" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer120x4753f80" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer130x47540c0" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer140x4754200" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer150x41a0220" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer160x4754340" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="layer170x4754480" rmax1="2401.5" rmax2="2401.5" rmin1="25" rmin2="25" startphi="0" z="900"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="GenericTrackerEndcap0x4752d80" rmax1="8000" rmax2="8000" rmin1="22" rmin2="22" startphi="0" z="6750"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="GenericTrackerEndcap0x4752e80" rmax1="8000" rmax2="8000" rmin1="22" rmin2="22" startphi="0" z="16000"/>
+    <box lunit="mm" name="world_volume_shape_0x43281200x41a0390" x="20000" y="20000" z="20000"/>
+  </solids>
+
+  <structure>
+    <volume name="petal0x41b69f0">
+      <materialref ref="Silicon0x47386e0"/>
+      <solidref ref="petal0x41a0480"/>
+    </volume>
+    <volume name="layer00x47774d0">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer00x4752fc0"/>
+      <physvol name="petal_00x477dad0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_00x477dad0_pos" unit="mm" x="0" y="-312.5" z="1.91351062366774e-14"/>
+        <rotation name="petal_00x477dad0_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x477dbf0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_10x477dbf0_pos" unit="mm" x="119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_10x477dbf0_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x477dd10">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_20x477dd10_pos" unit="mm" x="220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_20x477dd10_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x477de60">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_30x477de60_pos" unit="mm" x="288.712353909777" y="-119.588572614091" z="7.32268813332234e-15"/>
+        <rotation name="petal_30x477de60_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x477df80">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_40x477df80_pos" unit="mm" x="312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_40x477df80_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x477e0f0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_50x477e0f0_pos" unit="mm" x="288.712353909777" y="119.588572614091" z="-7.32268813332234e-15"/>
+        <rotation name="petal_50x477e0f0_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x477e1e0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_60x477e1e0_pos" unit="mm" x="220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_60x477e1e0_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x477e300">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_70x477e300_pos" unit="mm" x="119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_70x477e300_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x477e420">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_80x477e420_pos" unit="mm" x="3.82702124733548e-14" y="312.5" z="-1.91351062366774e-14"/>
+        <rotation name="petal_80x477e420_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x477e5d0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_90x477e5d0_pos" unit="mm" x="-119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_90x477e5d0_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x477e6a0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_100x477e6a0_pos" unit="mm" x="-220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_100x477e6a0_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x477e7c0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_110x477e7c0_pos" unit="mm" x="-288.712353909777" y="119.588572614091" z="-7.32268813332235e-15"/>
+        <rotation name="petal_110x477e7c0_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x477e8e0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_120x477e8e0_pos" unit="mm" x="-312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_120x477e8e0_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x477ea00">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_130x477ea00_pos" unit="mm" x="-288.712353909777" y="-119.588572614091" z="7.32268813332235e-15"/>
+        <rotation name="petal_130x477ea00_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x477eb20">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_140x477eb20_pos" unit="mm" x="-220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_140x477eb20_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x477ec40">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_150x477ec40_pos" unit="mm" x="-119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_150x477ec40_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer10x4777dc0">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer10x4753100"/>
+      <physvol name="petal_00x477ed60">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_00x477ed60_pos" unit="mm" x="0" y="-312.5" z="1.91351062366774e-14"/>
+        <rotation name="petal_00x477ed60_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x477ee80">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_10x477ee80_pos" unit="mm" x="119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_10x477ee80_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x477efa0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_20x477efa0_pos" unit="mm" x="220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_20x477efa0_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x477f0f0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_30x477f0f0_pos" unit="mm" x="288.712353909777" y="-119.588572614091" z="7.32268813332234e-15"/>
+        <rotation name="petal_30x477f0f0_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x477f210">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_40x477f210_pos" unit="mm" x="312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_40x477f210_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x477f380">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_50x477f380_pos" unit="mm" x="288.712353909777" y="119.588572614091" z="-7.32268813332234e-15"/>
+        <rotation name="petal_50x477f380_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x477f470">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_60x477f470_pos" unit="mm" x="220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_60x477f470_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x477f590">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_70x477f590_pos" unit="mm" x="119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_70x477f590_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x477f6b0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_80x477f6b0_pos" unit="mm" x="3.82702124733548e-14" y="312.5" z="-1.91351062366774e-14"/>
+        <rotation name="petal_80x477f6b0_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x477f860">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_90x477f860_pos" unit="mm" x="-119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_90x477f860_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x477f930">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_100x477f930_pos" unit="mm" x="-220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_100x477f930_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x477fa50">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_110x477fa50_pos" unit="mm" x="-288.712353909777" y="119.588572614091" z="-7.32268813332235e-15"/>
+        <rotation name="petal_110x477fa50_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x477fb70">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_120x477fb70_pos" unit="mm" x="-312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_120x477fb70_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x477fc90">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_130x477fc90_pos" unit="mm" x="-288.712353909777" y="-119.588572614091" z="7.32268813332235e-15"/>
+        <rotation name="petal_130x477fc90_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x477fdb0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_140x477fdb0_pos" unit="mm" x="-220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_140x477fdb0_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x477fed0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_150x477fed0_pos" unit="mm" x="-119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_150x477fed0_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer20x4777e60">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer20x4753240"/>
+      <physvol name="petal_00x477fff0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_00x477fff0_pos" unit="mm" x="0" y="-312.5" z="1.91351062366774e-14"/>
+        <rotation name="petal_00x477fff0_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x4780110">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_10x4780110_pos" unit="mm" x="119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_10x4780110_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x4780230">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_20x4780230_pos" unit="mm" x="220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_20x4780230_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x4780380">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_30x4780380_pos" unit="mm" x="288.712353909777" y="-119.588572614091" z="7.32268813332234e-15"/>
+        <rotation name="petal_30x4780380_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x47804a0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_40x47804a0_pos" unit="mm" x="312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_40x47804a0_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4780610">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_50x4780610_pos" unit="mm" x="288.712353909777" y="119.588572614091" z="-7.32268813332234e-15"/>
+        <rotation name="petal_50x4780610_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4780700">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_60x4780700_pos" unit="mm" x="220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_60x4780700_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4780820">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_70x4780820_pos" unit="mm" x="119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_70x4780820_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x4780940">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_80x4780940_pos" unit="mm" x="3.82702124733548e-14" y="312.5" z="-1.91351062366774e-14"/>
+        <rotation name="petal_80x4780940_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4780af0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_90x4780af0_pos" unit="mm" x="-119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_90x4780af0_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4780bc0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_100x4780bc0_pos" unit="mm" x="-220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_100x4780bc0_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x4780ce0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_110x4780ce0_pos" unit="mm" x="-288.712353909777" y="119.588572614091" z="-7.32268813332235e-15"/>
+        <rotation name="petal_110x4780ce0_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x4780e00">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_120x4780e00_pos" unit="mm" x="-312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_120x4780e00_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x4780f20">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_130x4780f20_pos" unit="mm" x="-288.712353909777" y="-119.588572614091" z="7.32268813332235e-15"/>
+        <rotation name="petal_130x4780f20_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x4781040">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_140x4781040_pos" unit="mm" x="-220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_140x4781040_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x4781160">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_150x4781160_pos" unit="mm" x="-119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_150x4781160_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer30x4777f40">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer30x4753380"/>
+      <physvol name="petal_00x4781280">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_00x4781280_pos" unit="mm" x="0" y="-312.5" z="1.91351062366774e-14"/>
+        <rotation name="petal_00x4781280_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x47813a0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_10x47813a0_pos" unit="mm" x="119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_10x47813a0_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x47814c0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_20x47814c0_pos" unit="mm" x="220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_20x47814c0_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x4781610">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_30x4781610_pos" unit="mm" x="288.712353909777" y="-119.588572614091" z="7.32268813332234e-15"/>
+        <rotation name="petal_30x4781610_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x4781730">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_40x4781730_pos" unit="mm" x="312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_40x4781730_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x47818a0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_50x47818a0_pos" unit="mm" x="288.712353909777" y="119.588572614091" z="-7.32268813332234e-15"/>
+        <rotation name="petal_50x47818a0_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4781990">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_60x4781990_pos" unit="mm" x="220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_60x4781990_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4781ab0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_70x4781ab0_pos" unit="mm" x="119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_70x4781ab0_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x4781bd0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_80x4781bd0_pos" unit="mm" x="3.82702124733548e-14" y="312.5" z="-1.91351062366774e-14"/>
+        <rotation name="petal_80x4781bd0_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4781d80">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_90x4781d80_pos" unit="mm" x="-119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_90x4781d80_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4781e50">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_100x4781e50_pos" unit="mm" x="-220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_100x4781e50_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x4781f70">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_110x4781f70_pos" unit="mm" x="-288.712353909777" y="119.588572614091" z="-7.32268813332235e-15"/>
+        <rotation name="petal_110x4781f70_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x4782090">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_120x4782090_pos" unit="mm" x="-312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_120x4782090_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x47821b0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_130x47821b0_pos" unit="mm" x="-288.712353909777" y="-119.588572614091" z="7.32268813332235e-15"/>
+        <rotation name="petal_130x47821b0_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x47822d0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_140x47822d0_pos" unit="mm" x="-220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_140x47822d0_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x47823f0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_150x47823f0_pos" unit="mm" x="-119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_150x47823f0_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer40x4778060">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer40x47534c0"/>
+      <physvol name="petal_00x4782510">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_00x4782510_pos" unit="mm" x="0" y="-312.5" z="1.91351062366774e-14"/>
+        <rotation name="petal_00x4782510_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x4782630">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_10x4782630_pos" unit="mm" x="119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_10x4782630_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x4782750">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_20x4782750_pos" unit="mm" x="220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_20x4782750_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x47828a0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_30x47828a0_pos" unit="mm" x="288.712353909777" y="-119.588572614091" z="7.32268813332234e-15"/>
+        <rotation name="petal_30x47828a0_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x47829c0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_40x47829c0_pos" unit="mm" x="312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_40x47829c0_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4782b30">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_50x4782b30_pos" unit="mm" x="288.712353909777" y="119.588572614091" z="-7.32268813332234e-15"/>
+        <rotation name="petal_50x4782b30_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4782c20">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_60x4782c20_pos" unit="mm" x="220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_60x4782c20_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4782d40">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_70x4782d40_pos" unit="mm" x="119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_70x4782d40_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x4782e60">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_80x4782e60_pos" unit="mm" x="3.82702124733548e-14" y="312.5" z="-1.91351062366774e-14"/>
+        <rotation name="petal_80x4782e60_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4783010">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_90x4783010_pos" unit="mm" x="-119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_90x4783010_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x47830e0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_100x47830e0_pos" unit="mm" x="-220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_100x47830e0_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x4783200">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_110x4783200_pos" unit="mm" x="-288.712353909777" y="119.588572614091" z="-7.32268813332235e-15"/>
+        <rotation name="petal_110x4783200_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x4783320">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_120x4783320_pos" unit="mm" x="-312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_120x4783320_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x4783440">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_130x4783440_pos" unit="mm" x="-288.712353909777" y="-119.588572614091" z="7.32268813332235e-15"/>
+        <rotation name="petal_130x4783440_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x4783560">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_140x4783560_pos" unit="mm" x="-220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_140x4783560_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x4783680">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_150x4783680_pos" unit="mm" x="-119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_150x4783680_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer50x4778180">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer50x4753600"/>
+      <physvol name="petal_00x47837a0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_00x47837a0_pos" unit="mm" x="0" y="-312.5" z="1.91351062366774e-14"/>
+        <rotation name="petal_00x47837a0_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x47838c0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_10x47838c0_pos" unit="mm" x="119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_10x47838c0_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x47839e0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_20x47839e0_pos" unit="mm" x="220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_20x47839e0_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x4783b30">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_30x4783b30_pos" unit="mm" x="288.712353909777" y="-119.588572614091" z="7.32268813332234e-15"/>
+        <rotation name="petal_30x4783b30_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x4783c50">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_40x4783c50_pos" unit="mm" x="312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_40x4783c50_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4783dc0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_50x4783dc0_pos" unit="mm" x="288.712353909777" y="119.588572614091" z="-7.32268813332234e-15"/>
+        <rotation name="petal_50x4783dc0_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4783eb0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_60x4783eb0_pos" unit="mm" x="220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_60x4783eb0_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4783fd0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_70x4783fd0_pos" unit="mm" x="119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_70x4783fd0_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x47840f0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_80x47840f0_pos" unit="mm" x="3.82702124733548e-14" y="312.5" z="-1.91351062366774e-14"/>
+        <rotation name="petal_80x47840f0_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x47842a0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_90x47842a0_pos" unit="mm" x="-119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_90x47842a0_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4784370">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_100x4784370_pos" unit="mm" x="-220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_100x4784370_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x4784490">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_110x4784490_pos" unit="mm" x="-288.712353909777" y="119.588572614091" z="-7.32268813332235e-15"/>
+        <rotation name="petal_110x4784490_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x47845b0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_120x47845b0_pos" unit="mm" x="-312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_120x47845b0_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x47846d0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_130x47846d0_pos" unit="mm" x="-288.712353909777" y="-119.588572614091" z="7.32268813332235e-15"/>
+        <rotation name="petal_130x47846d0_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x47847f0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_140x47847f0_pos" unit="mm" x="-220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_140x47847f0_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x4784910">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_150x4784910_pos" unit="mm" x="-119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_150x4784910_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer60x47782a0">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer60x4753740"/>
+      <physvol name="petal_00x4784a30">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_00x4784a30_pos" unit="mm" x="0" y="-312.5" z="1.91351062366774e-14"/>
+        <rotation name="petal_00x4784a30_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x4784b50">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_10x4784b50_pos" unit="mm" x="119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_10x4784b50_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x477d530">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_20x477d530_pos" unit="mm" x="220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_20x477d530_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x477d680">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_30x477d680_pos" unit="mm" x="288.712353909777" y="-119.588572614091" z="7.32268813332234e-15"/>
+        <rotation name="petal_30x477d680_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x4785230">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_40x4785230_pos" unit="mm" x="312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_40x4785230_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4785370">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_50x4785370_pos" unit="mm" x="288.712353909777" y="119.588572614091" z="-7.32268813332234e-15"/>
+        <rotation name="petal_50x4785370_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4785460">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_60x4785460_pos" unit="mm" x="220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_60x4785460_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4785580">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_70x4785580_pos" unit="mm" x="119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_70x4785580_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x47856a0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_80x47856a0_pos" unit="mm" x="3.82702124733548e-14" y="312.5" z="-1.91351062366774e-14"/>
+        <rotation name="petal_80x47856a0_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4785850">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_90x4785850_pos" unit="mm" x="-119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_90x4785850_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4785920">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_100x4785920_pos" unit="mm" x="-220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_100x4785920_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x4785a40">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_110x4785a40_pos" unit="mm" x="-288.712353909777" y="119.588572614091" z="-7.32268813332235e-15"/>
+        <rotation name="petal_110x4785a40_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x4785b60">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_120x4785b60_pos" unit="mm" x="-312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_120x4785b60_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x4785c80">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_130x4785c80_pos" unit="mm" x="-288.712353909777" y="-119.588572614091" z="7.32268813332235e-15"/>
+        <rotation name="petal_130x4785c80_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x4785da0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_140x4785da0_pos" unit="mm" x="-220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_140x4785da0_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x4785ec0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_150x4785ec0_pos" unit="mm" x="-119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_150x4785ec0_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer70x47783c0">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer70x4753880"/>
+      <physvol name="petal_00x4785fe0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_00x4785fe0_pos" unit="mm" x="0" y="-312.5" z="1.91351062366774e-14"/>
+        <rotation name="petal_00x4785fe0_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x4786100">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_10x4786100_pos" unit="mm" x="119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_10x4786100_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x4786220">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_20x4786220_pos" unit="mm" x="220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_20x4786220_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x4786370">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_30x4786370_pos" unit="mm" x="288.712353909777" y="-119.588572614091" z="7.32268813332234e-15"/>
+        <rotation name="petal_30x4786370_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x4786490">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_40x4786490_pos" unit="mm" x="312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_40x4786490_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4786600">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_50x4786600_pos" unit="mm" x="288.712353909777" y="119.588572614091" z="-7.32268813332234e-15"/>
+        <rotation name="petal_50x4786600_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x47866f0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_60x47866f0_pos" unit="mm" x="220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_60x47866f0_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4786810">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_70x4786810_pos" unit="mm" x="119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_70x4786810_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x4786930">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_80x4786930_pos" unit="mm" x="3.82702124733548e-14" y="312.5" z="-1.91351062366774e-14"/>
+        <rotation name="petal_80x4786930_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4786ae0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_90x4786ae0_pos" unit="mm" x="-119.588572614091" y="288.712353909777" z="-1.76785330044953e-14"/>
+        <rotation name="petal_90x4786ae0_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4786bb0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_100x4786bb0_pos" unit="mm" x="-220.970869120796" y="220.970869120796" z="-1.35305633786796e-14"/>
+        <rotation name="petal_100x4786bb0_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x4786cd0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_110x4786cd0_pos" unit="mm" x="-288.712353909777" y="119.588572614091" z="-7.32268813332235e-15"/>
+        <rotation name="petal_110x4786cd0_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x4786df0">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_120x4786df0_pos" unit="mm" x="-312.5" y="-1.91351062366774e-14" z="0"/>
+        <rotation name="petal_120x4786df0_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x4786f10">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_130x4786f10_pos" unit="mm" x="-288.712353909777" y="-119.588572614091" z="7.32268813332235e-15"/>
+        <rotation name="petal_130x4786f10_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x4787030">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_140x4787030_pos" unit="mm" x="-220.970869120796" y="-220.970869120796" z="1.35305633786796e-14"/>
+        <rotation name="petal_140x4787030_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x4787150">
+        <volumeref ref="petal0x41b69f0"/>
+        <position name="petal_150x4787150_pos" unit="mm" x="-119.588572614091" y="-288.712353909777" z="1.76785330044953e-14"/>
+        <rotation name="petal_150x4787150_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="petal0x41b68d0">
+      <materialref ref="Silicon0x47386e0"/>
+      <solidref ref="petal0x47539c0"/>
+    </volume>
+    <volume name="layer80x47784e0">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer80x4753a80"/>
+      <physvol name="petal_00x4787270">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x4787270_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x4787270_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x4787390">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x4787390_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x4787390_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x47874b0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x47874b0_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x47874b0_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x4787600">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x4787600_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x4787600_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x4787720">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x4787720_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x4787720_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4787890">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x4787890_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x4787890_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4787980">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x4787980_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x4787980_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4787aa0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x4787aa0_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x4787aa0_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x4787bc0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x4787bc0_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x4787bc0_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4787d70">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x4787d70_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x4787d70_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4787e40">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x4787e40_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x4787e40_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x4787f60">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x4787f60_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x4787f60_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x4788080">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x4788080_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x4788080_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x47881a0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x47881a0_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x47881a0_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x47882c0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x47882c0_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x47882c0_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x47883e0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x47883e0_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x47883e0_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer90x4778600">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer90x4753bc0"/>
+      <physvol name="petal_00x4788500">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x4788500_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x4788500_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x4788620">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x4788620_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x4788620_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x4788740">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x4788740_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x4788740_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x4788890">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x4788890_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x4788890_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x47889b0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x47889b0_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x47889b0_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4788b20">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x4788b20_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x4788b20_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4788c10">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x4788c10_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x4788c10_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4788d30">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x4788d30_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x4788d30_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x4788e50">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x4788e50_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x4788e50_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4789000">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x4789000_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x4789000_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x47890d0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x47890d0_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x47890d0_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x47891f0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x47891f0_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x47891f0_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x4789310">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x4789310_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x4789310_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x4789430">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x4789430_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x4789430_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x4789550">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x4789550_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x4789550_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x4789670">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x4789670_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x4789670_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer100x4778720">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer100x4753d00"/>
+      <physvol name="petal_00x4789790">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x4789790_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x4789790_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x47898b0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x47898b0_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x47898b0_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x47899d0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x47899d0_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x47899d0_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x4789b20">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x4789b20_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x4789b20_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x4789c40">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x4789c40_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x4789c40_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4789db0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x4789db0_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x4789db0_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4789ea0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x4789ea0_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x4789ea0_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4789fc0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x4789fc0_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x4789fc0_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x478a0e0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x478a0e0_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x478a0e0_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x478a290">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x478a290_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x478a290_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x478a360">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x478a360_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x478a360_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x478a480">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x478a480_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x478a480_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x478a5a0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x478a5a0_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x478a5a0_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x478a6c0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x478a6c0_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x478a6c0_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x478a7e0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x478a7e0_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x478a7e0_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x478a900">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x478a900_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x478a900_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer110x4778840">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer110x4753e40"/>
+      <physvol name="petal_00x478aa20">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x478aa20_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x478aa20_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x478ab40">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x478ab40_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x478ab40_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x478ac60">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x478ac60_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x478ac60_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x478adb0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x478adb0_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x478adb0_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x478aed0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x478aed0_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x478aed0_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x478b040">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x478b040_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x478b040_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x478b130">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x478b130_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x478b130_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x478b250">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x478b250_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x478b250_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x478b370">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x478b370_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x478b370_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x478b520">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x478b520_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x478b520_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x478b5f0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x478b5f0_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x478b5f0_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x478b710">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x478b710_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x478b710_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x478b830">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x478b830_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x478b830_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x478b950">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x478b950_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x478b950_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x478ba70">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x478ba70_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x478ba70_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x478bb90">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x478bb90_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x478bb90_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer120x4778960">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer120x4753f80"/>
+      <physvol name="petal_00x478bcb0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x478bcb0_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x478bcb0_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x478bdd0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x478bdd0_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x478bdd0_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x478bef0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x478bef0_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x478bef0_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x478c040">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x478c040_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x478c040_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x478c160">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x478c160_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x478c160_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x478c2d0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x478c2d0_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x478c2d0_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4784c70">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x4784c70_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x4784c70_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4784d90">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x4784d90_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x4784d90_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x4784eb0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x4784eb0_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x4784eb0_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4785060">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x4785060_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x4785060_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4785130">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x4785130_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x4785130_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x478d000">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x478d000_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x478d000_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x478d120">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x478d120_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x478d120_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x478d240">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x478d240_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x478d240_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x478d360">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x478d360_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x478d360_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x478d480">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x478d480_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x478d480_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer130x4778a80">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer130x47540c0"/>
+      <physvol name="petal_00x478d5a0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x478d5a0_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x478d5a0_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x478d6c0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x478d6c0_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x478d6c0_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x478d7e0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x478d7e0_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x478d7e0_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x478d930">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x478d930_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x478d930_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x478da50">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x478da50_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x478da50_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x478dbc0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x478dbc0_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x478dbc0_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x478dcb0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x478dcb0_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x478dcb0_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x478ddd0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x478ddd0_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x478ddd0_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x478def0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x478def0_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x478def0_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x478e0a0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x478e0a0_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x478e0a0_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x478e170">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x478e170_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x478e170_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x478e290">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x478e290_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x478e290_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x478e3b0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x478e3b0_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x478e3b0_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x478e4d0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x478e4d0_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x478e4d0_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x478e5f0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x478e5f0_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x478e5f0_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x478e710">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x478e710_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x478e710_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer140x4778ba0">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer140x4754200"/>
+      <physvol copynumber="13" name="petal_130x4779430">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x4779430_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x4779430_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x477d860">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x477d860_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x477d860_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x477d980">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x477d980_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x477d980_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+      <physvol name="petal_00x478e830">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x478e830_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x478e830_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x478e950">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x478e950_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x478e950_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x478eac0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x478eac0_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x478eac0_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x478ebb0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x478ebb0_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x478ebb0_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x478ecd0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x478ecd0_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x478ecd0_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x478edf0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x478edf0_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x478edf0_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x478efa0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x478efa0_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x478efa0_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x478f070">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x478f070_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x478f070_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x478f190">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x478f190_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x478f190_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x478f2b0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x478f2b0_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x478f2b0_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x478f3d0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x478f3d0_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x478f3d0_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x478f4f0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x478f4f0_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x478f4f0_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x478f610">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x478f610_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x478f610_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+    </volume>
+    <volume name="layer150x4778cc0">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer150x41a0220"/>
+      <physvol name="petal_00x478f730">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x478f730_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x478f730_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x478f850">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x478f850_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x478f850_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x478f970">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x478f970_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x478f970_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x478fac0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x478fac0_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x478fac0_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x478fbe0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x478fbe0_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x478fbe0_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x478fd50">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x478fd50_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x478fd50_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x478fe40">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x478fe40_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x478fe40_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x478ff60">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x478ff60_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x478ff60_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x4790080">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x4790080_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x4790080_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4790230">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x4790230_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x4790230_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4790300">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x4790300_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x4790300_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x4790420">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x4790420_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x4790420_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x4790540">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x4790540_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x4790540_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x4790660">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x4790660_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x4790660_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x4790780">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x4790780_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x4790780_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x47908a0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x47908a0_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x47908a0_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer160x4778de0">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer160x4754340"/>
+      <physvol name="petal_00x47909c0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x47909c0_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x47909c0_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x4790ae0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x4790ae0_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x4790ae0_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x4790c00">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x4790c00_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x4790c00_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x4790d50">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x4790d50_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x4790d50_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x4790e70">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x4790e70_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x4790e70_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4790fe0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x4790fe0_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x4790fe0_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x47910d0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x47910d0_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x47910d0_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x47911f0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x47911f0_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x47911f0_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x4791310">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x4791310_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x4791310_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x47914c0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x47914c0_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x47914c0_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4791590">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x4791590_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x4791590_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x47916b0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x47916b0_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x47916b0_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x47917d0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x47917d0_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x47917d0_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x47918f0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x47918f0_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x47918f0_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x4791a10">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x4791a10_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x4791a10_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x4791b30">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x4791b30_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x4791b30_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="layer170x4778f00">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="layer170x4754480"/>
+      <physvol name="petal_00x4791c50">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_00x4791c50_pos" unit="mm" x="0" y="-1213.25" z="7.42901364532763e-14"/>
+        <rotation name="petal_00x4791c50_rot" unit="deg" x="-90" y="0" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="1" name="petal_10x4791d70">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_10x4791d70_pos" unit="mm" x="464.290674316945" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_10x4791d70_rot" unit="deg" x="-90" y="-22.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="2" name="petal_20x4791e90">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_20x4791e90_pos" unit="mm" x="857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_20x4791e90_rot" unit="deg" x="-90" y="-45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="3" name="petal_30x4791fe0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_30x4791fe0_pos" unit="mm" x="1120.89684281932" y="-464.290674316945" z="2.84296044088107e-14"/>
+        <rotation name="petal_30x4791fe0_rot" unit="deg" x="-90" y="-67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="4" name="petal_40x4792100">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_40x4792100_pos" unit="mm" x="1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_40x4792100_rot" unit="deg" x="-91.8" y="-90" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="petal_50x4792270">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_50x4792270_pos" unit="mm" x="1120.89684281932" y="464.290674316945" z="-2.84296044088106e-14"/>
+        <rotation name="petal_50x4792270_rot" unit="deg" x="90" y="-67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="6" name="petal_60x4792360">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_60x4792360_pos" unit="mm" x="857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_60x4792360_rot" unit="deg" x="90" y="-45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="7" name="petal_70x4792480">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_70x4792480_pos" unit="mm" x="464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_70x4792480_rot" unit="deg" x="90" y="-22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="8" name="petal_80x47925a0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_80x47925a0_pos" unit="mm" x="1.48580272906553e-13" y="1213.25" z="-7.42901364532763e-14"/>
+        <rotation name="petal_80x47925a0_rot" unit="deg" x="90" y="0" z="178.2"/>
+      </physvol>
+      <physvol copynumber="9" name="petal_90x4792750">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_90x4792750_pos" unit="mm" x="-464.290674316945" y="1120.89684281932" z="-6.86351365366526e-14"/>
+        <rotation name="petal_90x4792750_rot" unit="deg" x="90" y="22.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="10" name="petal_100x4792820">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_100x4792820_pos" unit="mm" x="-857.897302274579" y="857.897302274579" z="-5.25310592613856e-14"/>
+        <rotation name="petal_100x4792820_rot" unit="deg" x="90" y="45" z="178.2"/>
+      </physvol>
+      <physvol copynumber="11" name="petal_110x4792940">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_110x4792940_pos" unit="mm" x="-1120.89684281932" y="464.290674316946" z="-2.84296044088107e-14"/>
+        <rotation name="petal_110x4792940_rot" unit="deg" x="90" y="67.5" z="178.2"/>
+      </physvol>
+      <physvol copynumber="12" name="petal_120x4792a60">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_120x4792a60_pos" unit="mm" x="-1213.25" y="-7.42901364532763e-14" z="0"/>
+        <rotation name="petal_120x4792a60_rot" unit="deg" x="-88.2" y="90" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="petal_130x4792b80">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_130x4792b80_pos" unit="mm" x="-1120.89684281932" y="-464.290674316946" z="2.84296044088107e-14"/>
+        <rotation name="petal_130x4792b80_rot" unit="deg" x="-90" y="67.5" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="14" name="petal_140x4792ca0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_140x4792ca0_pos" unit="mm" x="-857.897302274579" y="-857.897302274579" z="5.25310592613856e-14"/>
+        <rotation name="petal_140x4792ca0_rot" unit="deg" x="-90" y="45" z="-1.8"/>
+      </physvol>
+      <physvol copynumber="15" name="petal_150x4792dc0">
+        <volumeref ref="petal0x41b68d0"/>
+        <position name="petal_150x4792dc0_pos" unit="mm" x="-464.290674316946" y="-1120.89684281932" z="6.86351365366526e-14"/>
+        <rotation name="petal_150x4792dc0_rot" unit="deg" x="-90" y="22.5" z="-1.8"/>
+      </physvol>
+    </volume>
+    <volume name="GenericTrackerEndcap0x4779040">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="GenericTrackerEndcap0x4752d80"/>
+      <physvol name="layer0_00x4792ee0">
+        <volumeref ref="layer00x47774d0"/>
+        <position name="layer0_00x4792ee0_pos" unit="mm" x="0" y="0" z="-3375"/>
+      </physvol>
+      <physvol copynumber="1" name="layer1_10x4792fb0">
+        <volumeref ref="layer10x4777dc0"/>
+        <position name="layer1_10x4792fb0_pos" unit="mm" x="0" y="0" z="-3156.25"/>
+      </physvol>
+      <physvol copynumber="2" name="layer2_20x4793080">
+        <volumeref ref="layer20x4777e60"/>
+        <position name="layer2_20x4793080_pos" unit="mm" x="0" y="0" z="-2937.5"/>
+      </physvol>
+      <physvol copynumber="3" name="layer3_30x4793180">
+        <volumeref ref="layer30x4777f40"/>
+        <position name="layer3_30x4793180_pos" unit="mm" x="0" y="0" z="-2718.75"/>
+      </physvol>
+      <physvol copynumber="4" name="layer4_40x4793250">
+        <volumeref ref="layer40x4778060"/>
+        <position name="layer4_40x4793250_pos" unit="mm" x="0" y="0" z="-2500"/>
+      </physvol>
+      <physvol copynumber="5" name="layer5_50x4793370">
+        <volumeref ref="layer50x4778180"/>
+        <position name="layer5_50x4793370_pos" unit="mm" x="0" y="0" z="-2281.25"/>
+      </physvol>
+      <physvol copynumber="6" name="layer6_60x4793410">
+        <volumeref ref="layer60x47782a0"/>
+        <position name="layer6_60x4793410_pos" unit="mm" x="0" y="0" z="-2062.5"/>
+      </physvol>
+      <physvol copynumber="7" name="layer7_70x47934e0">
+        <volumeref ref="layer70x47783c0"/>
+        <position name="layer7_70x47934e0_pos" unit="mm" x="0" y="0" z="-1843.75"/>
+      </physvol>
+      <physvol copynumber="8" name="layer8_80x47935b0">
+        <volumeref ref="layer80x47784e0"/>
+        <position name="layer8_80x47935b0_pos" unit="mm" x="0" y="0" z="-1125"/>
+      </physvol>
+      <physvol copynumber="9" name="layer9_90x4793710">
+        <volumeref ref="layer90x4778600"/>
+        <position name="layer9_90x4793710_pos" unit="mm" x="0" y="0" z="-675"/>
+      </physvol>
+      <physvol copynumber="10" name="layer10_100x47937e0">
+        <volumeref ref="layer100x4778720"/>
+        <position name="layer10_100x47937e0_pos" unit="mm" x="0" y="0" z="-225"/>
+      </physvol>
+      <physvol copynumber="11" name="layer11_110x47938b0">
+        <volumeref ref="layer110x4778840"/>
+        <position name="layer11_110x47938b0_pos" unit="mm" x="0" y="0" z="225"/>
+      </physvol>
+      <physvol copynumber="12" name="layer12_120x4793980">
+        <volumeref ref="layer120x4778960"/>
+        <position name="layer12_120x4793980_pos" unit="mm" x="0" y="0" z="675"/>
+      </physvol>
+      <physvol copynumber="13" name="layer13_130x4793a50">
+        <volumeref ref="layer130x4778a80"/>
+        <position name="layer13_130x4793a50_pos" unit="mm" x="0" y="0" z="1125"/>
+      </physvol>
+      <physvol copynumber="14" name="layer14_140x4793b20">
+        <volumeref ref="layer140x4778ba0"/>
+        <position name="layer14_140x4793b20_pos" unit="mm" x="0" y="0" z="1575"/>
+      </physvol>
+      <physvol copynumber="15" name="layer15_150x4793bf0">
+        <volumeref ref="layer150x4778cc0"/>
+        <position name="layer15_150x4793bf0_pos" unit="mm" x="0" y="0" z="2025"/>
+      </physvol>
+      <physvol copynumber="16" name="layer16_160x4793cc0">
+        <volumeref ref="layer160x4778de0"/>
+        <position name="layer16_160x4793cc0_pos" unit="mm" x="0" y="0" z="2475"/>
+      </physvol>
+      <physvol copynumber="17" name="layer17_170x4793e60">
+        <volumeref ref="layer170x4778f00"/>
+        <position name="layer17_170x4793e60_pos" unit="mm" x="0" y="0" z="2925"/>
+      </physvol>
+    </volume>
+    <volume name="GenericTrackerEndcap0x4779190">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="GenericTrackerEndcap0x4752e80"/>
+      <physvol name="GenericTrackerEndcap_00x4793f00">
+        <volumeref ref="GenericTrackerEndcap0x4779040"/>
+        <position name="GenericTrackerEndcap_00x4793f00_pos" unit="mm" x="0" y="0" z="4625"/>
+      </physvol>
+      <physvol copynumber="1" name="GenericTrackerEndcap_10x4793fd0">
+        <volumeref ref="GenericTrackerEndcap0x4779040"/>
+        <position name="GenericTrackerEndcap_10x4793fd0_pos" unit="mm" x="0" y="0" z="-4625"/>
+        <rotation name="GenericTrackerEndcap_10x4793fd0_rot" unit="deg" x="-180" y="0" z="0"/>
+      </physvol>
+    </volume>
+    <volume name="world_volume0x4779310">
+      <materialref ref="Air0x4776b00"/>
+      <solidref ref="world_volume_shape_0x43281200x41a0390"/>
+      <physvol name="GenericTrackerEndcap_00x47940c0">
+        <volumeref ref="GenericTrackerEndcap0x4779190"/>
+      </physvol>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="world_volume0x4779310"/>
+  </setup>
+
+</gdml>

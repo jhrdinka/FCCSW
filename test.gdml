@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gdml xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+    <!--
+      +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      ++++   Linear collider detector description GDML in C++  ++++
+      ++++   DD4hep Detector description generator.            ++++
+      ++++                                                     ++++
+      ++++   Parser: TinyXML DOM mini-parser                   ++++
+      ++++                                                     ++++
+      ++++                              M.Frank CERN/LHCb      ++++
+      +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+    <define>
+        <position name="GenericTrackerBarrel_layer0_rod_module_component0_Silicon_0_pos_0x249b5e0" x="0.00000000e+00" y="-5.50000000e-02" z="0.00000000e+00" unit="cm" />
+        <position name="GenericTrackerBarrel_layer_rod_module_0_pos_0x24ac160" x="0.00000000e+00" y="-0.00000000e+00" z="-9.00000000e-01" unit="cm" />
+        <rotation name="identity_rot" x="0" y="0" z="0" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_0_pos_0x22fb650" x="7.50000000e+00" y="0.00000000e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_0_rot_0x22fb650" x="0.00000000e+00" y="-0.00000000e+00" z="-1.88495559e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_1_pos_0x24a42f0" x="7.16679604e+00" y="2.21066381e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_1_rot_0x24a42f0" x="0.00000000e+00" y="-0.00000000e+00" z="-2.18415489e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_2_pos_0x24a4580" x="6.19679081e+00" y="4.22490044e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_2_rot_0x24a4580" x="0.00000000e+00" y="-0.00000000e+00" z="-2.48335419e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_3_pos_0x24a4810" x="4.67617351e+00" y="5.86373612e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_3_rot_0x24a4810" x="0.00000000e+00" y="-0.00000000e+00" z="-2.78255349e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_4_pos_0x24a4a10" x="2.74005768e+00" y="6.98155311e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_4_rot_0x24a4a10" x="0.00000000e+00" y="-0.00000000e+00" z="-3.08175279e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_5_pos_0x24a4ca0" x="5.60475702e-01" y="7.47902848e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_5_rot_0x24a4ca0" x="-0.00000000e+00" y="-0.00000000e+00" z="2.90223321e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_6_pos_0x24a4ea0" x="-1.66890700e+00" y="7.31195934e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_6_rot_0x24a4ea0" x="-0.00000000e+00" y="-0.00000000e+00" z="2.60303391e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_7_pos_0x24a5130" x="-3.75000000e+00" y="6.49519053e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_7_rot_0x24a5130" x="-0.00000000e+00" y="-0.00000000e+00" z="2.30383461e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_8_pos_0x24a5330" x="-5.49788904e+00" y="5.10129553e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_8_rot_0x24a5330" x="-0.00000000e+00" y="-0.00000000e+00" z="2.00463531e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_9_pos_0x24a55c0" x="-6.75726651e+00" y="3.25412804e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_9_rot_0x24a55c0" x="-0.00000000e+00" y="-0.00000000e+00" z="1.70543601e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_10_pos_0x24a57c0" x="-7.41623120e+00" y="1.11781700e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_10_rot_0x24a57c0" x="0.00000000e+00" y="-0.00000000e+00" z="1.40623671e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_11_pos_0x24a5a50" x="-7.41623120e+00" y="-1.11781700e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_11_rot_0x24a5a50" x="0.00000000e+00" y="-0.00000000e+00" z="1.10703741e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_12_pos_0x24a5c50" x="-6.75726651e+00" y="-3.25412804e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_12_rot_0x24a5c50" x="0.00000000e+00" y="-0.00000000e+00" z="8.07838111e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_13_pos_0x24a5ee0" x="-5.49788904e+00" y="-5.10129553e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_13_rot_0x24a5ee0" x="0.00000000e+00" y="-0.00000000e+00" z="5.08638811e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_14_pos_0x24a60e0" x="-3.75000000e+00" y="-6.49519053e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_14_rot_0x24a60e0" x="0.00000000e+00" y="-0.00000000e+00" z="2.09439510e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_15_pos_0x24a6370" x="-1.66890700e+00" y="-7.31195934e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_15_rot_0x24a6370" x="0.00000000e+00" y="-0.00000000e+00" z="-8.97597901e-02" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_16_pos_0x24a6570" x="5.60475702e-01" y="-7.47902848e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_16_rot_0x24a6570" x="0.00000000e+00" y="-0.00000000e+00" z="-3.88959090e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_17_pos_0x24a6840" x="2.74005768e+00" y="-6.98155311e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_17_rot_0x24a6840" x="0.00000000e+00" y="-0.00000000e+00" z="-6.88158391e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_18_pos_0x24a6ad0" x="4.67617351e+00" y="-5.86373612e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_18_rot_0x24a6ad0" x="0.00000000e+00" y="-0.00000000e+00" z="-9.87357691e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_19_pos_0x24a6cd0" x="6.19679081e+00" y="-4.22490044e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_19_rot_0x24a6cd0" x="0.00000000e+00" y="-0.00000000e+00" z="-1.28655699e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_20_pos_0x24a6f60" x="7.16679604e+00" y="-2.21066381e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_20_rot_0x24a6f60" x="0.00000000e+00" y="-0.00000000e+00" z="-1.58575629e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_0_pos_0x24a7660" x="1.12500000e+01" y="0.00000000e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_0_rot_0x24a7660" x="0.00000000e+00" y="-0.00000000e+00" z="-1.88495559e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_1_pos_0x24a79d0" x="1.10338344e+01" y="2.19476612e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_1_rot_0x24a79d0" x="0.00000000e+00" y="-0.00000000e+00" z="-2.08130513e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_2_pos_0x24a7c20" x="1.03936447e+01" y="4.30518861e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_2_rot_0x24a7c20" x="0.00000000e+00" y="-0.00000000e+00" z="-2.27765467e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_3_pos_0x24a7eb0" x="9.35403314e+00" y="6.25016512e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_3_rot_0x24a7eb0" x="0.00000000e+00" y="-0.00000000e+00" z="-2.47400421e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_4_pos_0x24a80b0" x="7.95495129e+00" y="7.95495129e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_4_rot_0x24a80b0" x="0.00000000e+00" y="-0.00000000e+00" z="-2.67035376e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_5_pos_0x24a8340" x="6.25016512e+00" y="9.35403314e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_5_rot_0x24a8340" x="0.00000000e+00" y="-0.00000000e+00" z="-2.86670330e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_6_pos_0x24a8540" x="4.30518861e+00" y="1.03936447e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_6_rot_0x24a8540" x="0.00000000e+00" y="-0.00000000e+00" z="-3.06305284e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_7_pos_0x24a87d0" x="2.19476612e+00" y="1.10338344e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_7_rot_0x24a87d0" x="-0.00000000e+00" y="-0.00000000e+00" z="3.02378293e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_8_pos_0x24a89d0" x="6.88863825e-16" y="1.12500000e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_8_rot_0x24a89d0" x="-0.00000000e+00" y="-0.00000000e+00" z="2.82743339e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_9_pos_0x24a8c60" x="-2.19476612e+00" y="1.10338344e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_9_rot_0x24a8c60" x="-0.00000000e+00" y="-0.00000000e+00" z="2.63108385e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_10_pos_0x24a8e60" x="-4.30518861e+00" y="1.03936447e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_10_rot_0x24a8e60" x="-0.00000000e+00" y="-0.00000000e+00" z="2.43473431e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_11_pos_0x24a90f0" x="-6.25016512e+00" y="9.35403314e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_11_rot_0x24a90f0" x="-0.00000000e+00" y="-0.00000000e+00" z="2.23838477e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_12_pos_0x24a92f0" x="-7.95495129e+00" y="7.95495129e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_12_rot_0x24a92f0" x="-0.00000000e+00" y="-0.00000000e+00" z="2.04203522e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_13_pos_0x24a9580" x="-9.35403314e+00" y="6.25016512e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_13_rot_0x24a9580" x="-0.00000000e+00" y="-0.00000000e+00" z="1.84568568e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_14_pos_0x24a9780" x="-1.03936447e+01" y="4.30518861e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_14_rot_0x24a9780" x="-0.00000000e+00" y="-0.00000000e+00" z="1.64933614e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_15_pos_0x24a9a10" x="-1.10338344e+01" y="2.19476612e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_15_rot_0x24a9a10" x="0.00000000e+00" y="-0.00000000e+00" z="1.45298660e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_16_pos_0x24a9c10" x="-1.12500000e+01" y="1.37772765e-15" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_16_rot_0x24a9c10" x="0.00000000e+00" y="-0.00000000e+00" z="1.25663706e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_17_pos_0x24a9ee0" x="-1.10338344e+01" y="-2.19476612e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_17_rot_0x24a9ee0" x="0.00000000e+00" y="-0.00000000e+00" z="1.06028752e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_18_pos_0x24aa170" x="-1.03936447e+01" y="-4.30518861e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_18_rot_0x24aa170" x="0.00000000e+00" y="-0.00000000e+00" z="8.63937980e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_19_pos_0x24aa370" x="-9.35403314e+00" y="-6.25016512e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_19_rot_0x24aa370" x="0.00000000e+00" y="-0.00000000e+00" z="6.67588439e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_20_pos_0x24aa600" x="-7.95495129e+00" y="-7.95495129e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_20_rot_0x24aa600" x="0.00000000e+00" y="-0.00000000e+00" z="4.71238898e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_21_pos_0x24aa800" x="-6.25016512e+00" y="-9.35403314e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_21_rot_0x24aa800" x="0.00000000e+00" y="-0.00000000e+00" z="2.74889357e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_22_pos_0x24aaa90" x="-4.30518861e+00" y="-1.03936447e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_22_rot_0x24aaa90" x="0.00000000e+00" y="-0.00000000e+00" z="7.85398163e-02" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_23_pos_0x24aac90" x="-2.19476612e+00" y="-1.10338344e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_23_rot_0x24aac90" x="0.00000000e+00" y="-0.00000000e+00" z="-1.17809725e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_24_pos_0x24aaf20" x="-2.06659147e-15" y="-1.12500000e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_24_rot_0x24aaf20" x="0.00000000e+00" y="-0.00000000e+00" z="-3.14159265e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_25_pos_0x24ab120" x="2.19476612e+00" y="-1.10338344e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_25_rot_0x24ab120" x="0.00000000e+00" y="-0.00000000e+00" z="-5.10508806e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_26_pos_0x24ab3b0" x="4.30518861e+00" y="-1.03936447e+01" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_26_rot_0x24ab3b0" x="0.00000000e+00" y="-0.00000000e+00" z="-7.06858347e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_27_pos_0x24ab5b0" x="6.25016512e+00" y="-9.35403314e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_27_rot_0x24ab5b0" x="0.00000000e+00" y="-0.00000000e+00" z="-9.03207888e-01" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_28_pos_0x24ab840" x="7.95495129e+00" y="-7.95495129e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_28_rot_0x24ab840" x="0.00000000e+00" y="-0.00000000e+00" z="-1.09955743e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_29_pos_0x24aba40" x="9.35403314e+00" y="-6.25016512e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_29_rot_0x24aba40" x="0.00000000e+00" y="-0.00000000e+00" z="-1.29590697e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_30_pos_0x24abcd0" x="1.03936447e+01" y="-4.30518861e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_30_rot_0x24abcd0" x="0.00000000e+00" y="-0.00000000e+00" z="-1.49225651e+00" unit="rad" />
+        <position name="GenericTrackerBarrel_layer0_rod_31_pos_0x24abed0" x="1.10338344e+01" y="-2.19476612e+00" z="0.00000000e+00" unit="cm" />
+        <rotation name="GenericTrackerBarrel_layer0_rod_31_rot_0x24abed0" x="0.00000000e+00" y="-0.00000000e+00" z="-1.68860605e+00" unit="rad" />
+        <position name="identity_pos" x="0" y="0" z="0" unit="cm" />
+    </define>
+    <materials>
+        <element name="C" formula="C" Z="6">
+            <atom type="A" unit="g/mol" value="1.20107000e+01" />
+        </element>
+        <material name="Carbon">
+            <D value="2.00000000e+00" unit="g/cm3" type="density" />
+            <fraction n="1.00000000e+00" ref="C" />
+        </material>
+        <element name="SI" formula="SI" Z="14">
+            <atom type="A" unit="g/mol" value="2.80855000e+01" />
+        </element>
+        <material name="Silicon">
+            <D value="2.33000000e+00" unit="g/cm3" type="density" />
+            <fraction n="1.00000000e+00" ref="SI" />
+        </material>
+        <element name="N" formula="N" Z="7">
+            <atom type="A" unit="g/mol" value="1.40067400e+01" />
+        </element>
+        <element name="O" formula="O" Z="8">
+            <atom type="A" unit="g/mol" value="1.59994000e+01" />
+        </element>
+        <element name="AR" formula="AR" Z="18">
+            <atom type="A" unit="g/mol" value="3.99480000e+01" />
+        </element>
+        <material name="Air">
+            <D value="1.20000000e-03" unit="g/cm3" type="density" />
+            <fraction n="7.54000000e-01" ref="N" />
+            <fraction n="2.34000000e-01" ref="O" />
+            <fraction n="1.20000000e-02" ref="AR" />
+        </material>
+    </materials>
+    <solids>
+        <box name="world_volume_shape_0x244bfd0" x="2.00000000e+03" y="2.00000000e+03" z="2.00000000e+03" lunit="cm" />
+        <cone name="GenericTrackerBarrel_shape_0x249a9c0" z="2.00000000e+02" rmin1="2.00000000e+00" rmin2="2.00000000e+00" rmax1="9.00000000e+01" rmax2="9.00000000e+01" startphi="0.00000000e+00" deltaphi="3.60000000e+02" aunit="deg" lunit="cm" />
+        <box name="GenericTrackerBarrel_layer_rod_module_shape_0x249ad90" x="2.50000000e+00" y="1.42500000e-01" z="2.00000000e+01" lunit="cm" />
+        <box name="GenericTrackerBarrel_layer0_rod_module_component0_Silicon_shape_0x249ae30" x="2.50000000e+00" y="1.10000000e-01" z="2.00000000e+01" lunit="cm" />
+        <box name="GenericTrackerBarrel_layer0_rod_shape_0x249fd00" x="2.50000000e+00" y="1.42500000e-01" z="2.00000000e+01" lunit="cm" />
+        <cone name="GenericTrackerBarrel_layer0_shape_0x24a0700" z="2.00000000e+01" rmin1="7.50000000e+00" rmin2="7.50000000e+00" rmax1="1.12500000e+01" rmax2="1.12500000e+01" startphi="0.00000000e+00" deltaphi="3.60000000e+02" aunit="deg" lunit="cm" />
+        <cone name="GenericTrackerBarrel_layer1_shape_0x24a7160" z="2.00000000e+01" rmin1="1.12500000e+01" rmin2="1.12500000e+01" rmax1="1.50000000e+01" rmax2="1.50000000e+01" startphi="0.00000000e+00" deltaphi="3.60000000e+02" aunit="deg" lunit="cm" />
+    </solids>
+    <structure>
+        <volume name="GenericTrackerBarrel_layer0_rod_module_component0_Silicon_0x249af00">
+            <materialref ref="Silicon" />
+            <solidref ref="GenericTrackerBarrel_layer0_rod_module_component0_Silicon_shape_0x249ae30" />
+        </volume>
+        <volume name="GenericTrackerBarrel_layer_rod_module_0x249b2f0">
+            <materialref ref="Carbon" />
+            <solidref ref="GenericTrackerBarrel_layer_rod_module_shape_0x249ad90" />
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_module_component0_Silicon_0x249af00" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_module_component0_Silicon_0_pos_0x249b5e0" />
+            </physvol>
+        </volume>
+        <volume name="GenericTrackerBarrel_layer0_rod_0x24a03d0">
+            <materialref ref="Silicon" />
+            <solidref ref="GenericTrackerBarrel_layer0_rod_shape_0x249fd00" />
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer_rod_module_0x249b2f0" />
+                <positionref ref="GenericTrackerBarrel_layer_rod_module_0_pos_0x24ac160" />
+                <rotationref ref="identity_rot" />
+            </physvol>
+        </volume>
+        <volume name="GenericTrackerBarrel_layer0_0x24a0820">
+            <materialref ref="Silicon" />
+            <solidref ref="GenericTrackerBarrel_layer0_shape_0x24a0700" />
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_0_pos_0x22fb650" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_0_rot_0x22fb650" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_1_pos_0x24a42f0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_1_rot_0x24a42f0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_2_pos_0x24a4580" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_2_rot_0x24a4580" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_3_pos_0x24a4810" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_3_rot_0x24a4810" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_4_pos_0x24a4a10" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_4_rot_0x24a4a10" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_5_pos_0x24a4ca0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_5_rot_0x24a4ca0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_6_pos_0x24a4ea0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_6_rot_0x24a4ea0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_7_pos_0x24a5130" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_7_rot_0x24a5130" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_8_pos_0x24a5330" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_8_rot_0x24a5330" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_9_pos_0x24a55c0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_9_rot_0x24a55c0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_10_pos_0x24a57c0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_10_rot_0x24a57c0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_11_pos_0x24a5a50" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_11_rot_0x24a5a50" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_12_pos_0x24a5c50" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_12_rot_0x24a5c50" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_13_pos_0x24a5ee0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_13_rot_0x24a5ee0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_14_pos_0x24a60e0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_14_rot_0x24a60e0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_15_pos_0x24a6370" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_15_rot_0x24a6370" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_16_pos_0x24a6570" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_16_rot_0x24a6570" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_17_pos_0x24a6840" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_17_rot_0x24a6840" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_18_pos_0x24a6ad0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_18_rot_0x24a6ad0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_19_pos_0x24a6cd0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_19_rot_0x24a6cd0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_20_pos_0x24a6f60" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_20_rot_0x24a6f60" />
+            </physvol>
+        </volume>
+        <volume name="GenericTrackerBarrel_layer1_0x24a7250">
+            <materialref ref="Silicon" />
+            <solidref ref="GenericTrackerBarrel_layer1_shape_0x24a7160" />
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_0_pos_0x24a7660" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_0_rot_0x24a7660" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_1_pos_0x24a79d0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_1_rot_0x24a79d0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_2_pos_0x24a7c20" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_2_rot_0x24a7c20" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_3_pos_0x24a7eb0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_3_rot_0x24a7eb0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_4_pos_0x24a80b0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_4_rot_0x24a80b0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_5_pos_0x24a8340" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_5_rot_0x24a8340" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_6_pos_0x24a8540" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_6_rot_0x24a8540" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_7_pos_0x24a87d0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_7_rot_0x24a87d0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_8_pos_0x24a89d0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_8_rot_0x24a89d0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_9_pos_0x24a8c60" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_9_rot_0x24a8c60" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_10_pos_0x24a8e60" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_10_rot_0x24a8e60" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_11_pos_0x24a90f0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_11_rot_0x24a90f0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_12_pos_0x24a92f0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_12_rot_0x24a92f0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_13_pos_0x24a9580" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_13_rot_0x24a9580" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_14_pos_0x24a9780" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_14_rot_0x24a9780" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_15_pos_0x24a9a10" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_15_rot_0x24a9a10" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_16_pos_0x24a9c10" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_16_rot_0x24a9c10" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_17_pos_0x24a9ee0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_17_rot_0x24a9ee0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_18_pos_0x24aa170" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_18_rot_0x24aa170" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_19_pos_0x24aa370" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_19_rot_0x24aa370" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_20_pos_0x24aa600" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_20_rot_0x24aa600" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_21_pos_0x24aa800" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_21_rot_0x24aa800" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_22_pos_0x24aaa90" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_22_rot_0x24aaa90" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_23_pos_0x24aac90" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_23_rot_0x24aac90" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_24_pos_0x24aaf20" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_24_rot_0x24aaf20" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_25_pos_0x24ab120" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_25_rot_0x24ab120" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_26_pos_0x24ab3b0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_26_rot_0x24ab3b0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_27_pos_0x24ab5b0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_27_rot_0x24ab5b0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_28_pos_0x24ab840" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_28_rot_0x24ab840" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_29_pos_0x24aba40" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_29_rot_0x24aba40" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_30_pos_0x24abcd0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_30_rot_0x24abcd0" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_rod_0x24a03d0" />
+                <positionref ref="GenericTrackerBarrel_layer0_rod_31_pos_0x24abed0" />
+                <rotationref ref="GenericTrackerBarrel_layer0_rod_31_rot_0x24abed0" />
+            </physvol>
+        </volume>
+        <volume name="GenericTrackerBarrel_0x249ab50">
+            <materialref ref="Air" />
+            <solidref ref="GenericTrackerBarrel_shape_0x249a9c0" />
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer0_0x24a0820" />
+                <positionref ref="identity_pos" />
+            </physvol>
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_layer1_0x24a7250" />
+                <positionref ref="identity_pos" />
+            </physvol>
+        </volume>
+        <volume name="world_volume_0x244ac30">
+            <materialref ref="Air" />
+            <solidref ref="world_volume_shape_0x244bfd0" />
+            <physvol>
+                <volumeref ref="GenericTrackerBarrel_0x249ab50" />
+                <positionref ref="identity_pos" />
+            </physvol>
+        </volume>
+    </structure>
+    <setup name="default" version="1.0">
+        <world ref="world_volume_0x244ac30" />
+    </setup>
+</gdml>
