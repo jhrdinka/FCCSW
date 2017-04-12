@@ -4,7 +4,7 @@
 // GAUDI
 #include "GaudiAlg/GaudiAlgorithm.h"
 #include "GaudiKernel/ToolHandle.h"
-#include "ACTSLogger.h"
+#include "RecTools/ACTSLogger.h"
 
 // FCCSW
 #include "FWCore/DataHandle.h"
@@ -22,8 +22,6 @@ class TrackHitCollection;
 class PositionedTrackHitCollection;
 }
 
-
-
 typedef Acts::FittableMeasurement<long int> FitMeas_t;
 template <Acts::ParID_t... pars>
 using Meas_t = Acts::Measurement<long int, pars...>;
@@ -39,11 +37,12 @@ struct MyCache {
 
 class MyExtrapolator {
 public:
-  MyExtrapolator(std::shared_ptr<const Acts::IExtrapolationEngine> exEngine = nullptr) : m_exEngine(std::move(exEngine)) {}
+  MyExtrapolator(std::shared_ptr<const Acts::IExtrapolationEngine> exEngine = nullptr)
+      : m_exEngine(std::move(exEngine)) {}
 
   MyCache operator()(const FitMeas_t& m, const Acts::TrackParameters& tp) const {
     auto exCell = std::make_unique<Acts::ExtrapolationCell<Acts::TrackParameters>>(tp);
-    //exCell->addConfigurationMode(ExtrapolationMode::Destination);
+    // exCell->addConfigurationMode(ExtrapolationMode::Destination);
     exCell->addConfigurationMode(Acts::ExtrapolationMode::FATRAS);
     exCell->addConfigurationMode(Acts::ExtrapolationMode::CollectJacobians);
     const Acts::Surface& sf = getSurface(m);
@@ -83,7 +82,7 @@ public:
 std::shared_ptr<Acts::IExtrapolationEngine> initExtrapolator(const std::shared_ptr<const Acts::TrackingGeometry>& geo) {
   auto propConfig = Acts::RungeKuttaEngine<>::Config();
   /// @todo: use magnetic field service
-  propConfig.fieldService = std::make_shared<Acts::ConstantBField>(0, 0, 0.002); // kT
+  propConfig.fieldService = std::make_shared<Acts::ConstantBField>(0, 0, 0.002);  // kT
   auto propEngine = std::make_shared<Acts::RungeKuttaEngine<>>(propConfig);
 
   auto matConfig = Acts::MaterialEffectsEngine::Config();
@@ -108,8 +107,9 @@ std::shared_ptr<Acts::IExtrapolationEngine> initExtrapolator(const std::shared_p
   exEngineConfig.extrapolationEngines = {statEngine};
   auto exEngine = std::make_shared<Acts::ExtrapolationEngine>(exEngineConfig);
   ServiceHandle<IMessageSvc> msgSvc("MessageSvc", "Expol");
-  auto GaudiLogger = std::make_unique<Acts::Logger>(std::make_unique<GaudiPrintPolicy>(&(*msgSvc)),std::make_unique<GaudiFilterPolicy>(&(*msgSvc)));
-  exEngine->setLogger( std::move(GaudiLogger));
+  auto GaudiLogger = std::make_unique<Acts::Logger>(std::make_unique<GaudiPrintPolicy>(&(*msgSvc)),
+                                                    std::make_unique<GaudiFilterPolicy>(&(*msgSvc)));
+  exEngine->setLogger(std::move(GaudiLogger));
 
   return exEngine;
 }
@@ -137,7 +137,7 @@ private:
   std::shared_ptr<Acts::TrackingGeometry> m_trkGeo;
   std::shared_ptr<Acts::IExtrapolationEngine> m_exEngine;
 
-
-  DataHandle<fcc::PositionedTrackHitCollection> m_positionedTrackHits{"positionedHits", Gaudi::DataHandle::Reader, this};
+  DataHandle<fcc::PositionedTrackHitCollection> m_positionedTrackHits{"positionedHits", Gaudi::DataHandle::Reader,
+                                                                      this};
 };
 #endif /* RECTRACKER_TRACKFIT_H */
