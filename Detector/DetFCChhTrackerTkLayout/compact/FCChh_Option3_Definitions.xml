@@ -367,7 +367,7 @@
                     </rodEven>
                 </rods>
             </layer>
-            <layer id="3" radius="450.000*mm" rmin="441.425*mm" rmax="459.289*mm" bigDelta="5.000*mm" phi0="1.570796*rad">
+            <layer id="3" radius="450.000*mm" rmin="441.425*mm" rmax="459.*mm" bigDelta="5.000*mm" phi0="1.570796*rad">
                 <rods repeat="56" smallDelta="2.500*mm" rPhiOverlap="0.000*mm" nRPhiSegments="2" zOverlap="0.000*mm" nModules="17">
                     <rodOdd id="1">
                         <modules>
@@ -1985,7 +1985,7 @@
             </discZPls>
         </discs>
     </detector>
-    <detector name="FwdHelpECAPpos" id="29" type="TkLayoutEcapTracker" readout="TrackerEndcapReadout">
+   <!-- <detector name="FwdHelpECAPpos" id="29" type="TkLayoutEcapTracker" readout="TrackerEndcapReadout">
         <dimensions rmin="40.000*mm" rmax="1190.468*mm" zmin="7490.350*mm" zmax="7509.650*mm" reflect="false"/>
         <sensitive type="SimpleTrackerSD"/>
         <discs repeat="2">
@@ -2904,5 +2904,5 @@
                 <rings repeat="14" smallDelta="2.500*mm" rPhiOverlap="0.500*mm" nRPhiSegments="4" rOverlap="0.500*mm"/>
             </discZPls>
         </discs>
-    </detector>
+    </detector>-->
 </detectors>
