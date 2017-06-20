@@ -4,7 +4,7 @@
 gaudi_subdir(Examples v1r0)
 
 # this declaration will not be needed in the future
-gaudi_depends_on_subdirs(GaudiAlg FWCore Sim/SimG4Interface Detector/DetInterface Reconstruction/RecInterface Math)
+gaudi_depends_on_subdirs(GaudiAlg FWCore Sim/SimG4Interface Detector/DetInterface Reconstruction/RecInterface Math MagneticField)
 
 find_package(ROOT COMPONENTS MathCore GenVector Geom)
 find_package(DD4hep COMPONENTS DDG4 DDSegmentation REQUIRED)
