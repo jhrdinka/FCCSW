@@ -15,6 +15,8 @@
 
 namespace fcc {
 
+/// definition of a 2D Vector
+typedef Acts::Vector2D Vector2D;
 /// definition of a 3D Vector
 typedef Acts::Vector3D Vector3D;
 /// definition of a matrix of doubles
