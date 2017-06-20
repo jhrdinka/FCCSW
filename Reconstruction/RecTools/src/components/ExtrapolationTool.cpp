@@ -60,7 +60,7 @@ StatusCode ExtrapolationTool::initialize() {
                                                      std::make_unique<GaudiFilterPolicy>(&(*msgSvc1)));
   using RKEngine = Acts::RungeKuttaEngine<IBFieldSvc>;
   RKEngine::Config propConfig;
-  propConfig.fieldService.reset(m_bFieldSvc.get());
+  propConfig.fieldService.reset(m_bFieldSvc.get(), [](auto p) {});
   auto propEngine = std::make_shared<RKEngine>(propConfig);
   propEngine->setLogger(std::move(GaudiLogger1));
   // (b) MaterialEffectsEngine
@@ -163,6 +163,7 @@ ExtrapolationTool::extrapolate(const fcc::Vector3D& vertex, const fcc::Vector3D&
   debug() << "===> forward extrapolation - collecting information <<===" << endmsg;
   Acts::ExtrapolationCode eCode = m_extrapolationEngine->extrapolate(ecc);
   if (eCode.isFailure()) error() << ("Extrapolation failed.") << endmsg;
+  if (eCode.isSuccess()) info() << ("Extrapolation finished successfully") << endmsg;
 
   return ecc;
 }
