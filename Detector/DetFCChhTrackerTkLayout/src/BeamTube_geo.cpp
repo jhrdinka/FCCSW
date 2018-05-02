@@ -8,7 +8,7 @@ using dd4hep::PlacedVolume;
 using dd4hep::Tube;
 using dd4hep::DetElement;
 
-static dd4hep::Ref_t create_element(dd4hep::Detector& lcdd, xml_h e, dd4hep::SensitiveDetector ) {
+static dd4hep::Ref_t create_element(dd4hep::Detector& lcdd, xml_h e, dd4hep::SensitiveDetector) {
   xml_det_t x_det = e;
   std::string det_name = x_det.nameStr();
   // Make DetElement
@@ -25,6 +25,10 @@ static dd4hep::Ref_t create_element(dd4hep::Detector& lcdd, xml_h e, dd4hep::Sen
   Volume mother_vol = lcdd.pickMotherVolume(beamtube);
   PlacedVolume placedTube = mother_vol.placeVolume(tube_vol);
   beamtube.setPlacement(placedTube);
+  // set region of mother volume - if given
+  if (x_det_dim.hasAttr(_U(region))) beamtube.setRegion(lcdd, x_det_dim.regionStr(), tube_vol);
+  // set limits - if given
+  if (x_det_dim.hasAttr(_U(limits))) beamtube.setLimitSet(lcdd, x_det_dim.limitsStr(), tube_vol);
   return beamtube;
 }
 
