@@ -13,9 +13,19 @@
             <id>system:4,posneg:1,disc:5,component:17,x:-15,z:-15</id>
         </readout>
     </readouts>
+    <limits>
+	  <limitset  name="TrackerLimits">
+	    <limit  name="ekin_min"  particles="gamma"  value="0.1"  unit="MeV"  />
+	    <limit  name="ekin_min"  particles="e[+-]"  value="1"  unit="MeV"  />
+     </limitset>
+ 	</limits>
+    <regions>
+    	<region name="TrackerRegion">
+    	</region>
+    </regions>
     <include ref="FCChh_v3.03_Definitions.xml"/>
     <detectors>
-        <detector id="0" name="beampipe" type="BeamTube">
+        <detector id="0" name="beampipe" type="BeamTube" region="TrackerRegion" limits="TrackerLimits">
             <dimensions rmin="CentralBeamTube_rmin" rmax="CentralBeamTube_rmax" z="CentralBeamTube_dz" material="Beryllium" vis="violet"/>
         </detector>
         <detector id="101" name="FCChhInner" type="DD4hep_SubdetectorAssembly" vis="BlueVisTrans">
