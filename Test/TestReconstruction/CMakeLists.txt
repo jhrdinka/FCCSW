@@ -5,11 +5,7 @@ gaudi_subdir(TestReconstruction v1r0)
 
 gaudi_depends_on_subdirs(GaudiAlg GaudiKernel FWCore Detector/DetInterface Detector/DetCommon Detector/DetSegmentation)
 find_package(Geant4)
-<<<<<<< HEAD
-find_package(ACTS COMPONENTS Core)
-=======
 
->>>>>>> 63dd937... Seperate ACTS dependend code
 include(${Geant4_USE_FILE})
 
 gaudi_add_module(TestTestPlugins
