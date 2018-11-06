@@ -1,8 +1,9 @@
 #ifndef SIMG4FULL_PARTICLEHISTORYACTION_H
 #define SIMG4FULL_PARTICLEHISTORYACTION_H
 
-#include "G4UserTrackingAction.hh"
 #include <G4String.hh>
+#include <map>
+#include "G4UserTrackingAction.hh"
 
 /** @class ParticleHistoryAction SimG4Full/SimG4Full/ParticleHistoryAction.h ParticleHistoryAction.h
  *
@@ -44,6 +45,8 @@ private:
   double m_energyCut;
   /// name  of track information to exclude certain particles
   bool m_selectTaggedOnly;
+  /// map of tracks
+  std::map<int, const G4Track*> m_trackMap;
 };
 }
 

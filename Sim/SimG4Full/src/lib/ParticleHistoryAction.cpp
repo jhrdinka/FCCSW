@@ -10,15 +10,20 @@ namespace sim {
 ParticleHistoryAction::ParticleHistoryAction(double aEnergyCut, bool selectTaggedOnly)
     : m_energyCut(aEnergyCut), m_selectTaggedOnly(selectTaggedOnly) {}
 
-void ParticleHistoryAction::PreUserTrackingAction(const G4Track* /*aTrack*/) {}
+void ParticleHistoryAction::PreUserTrackingAction(const G4Track* aTrack) {
+  m_trackMap[aTrack->GetTrackID()] = new G4Track(*aTrack);
+}
 
 void ParticleHistoryAction::PostUserTrackingAction(const G4Track* aTrack) {
   auto g4EvtMgr = G4EventManager::GetEventManager();
   auto evtinfo = dynamic_cast<sim::EventInformation*>(g4EvtMgr->GetUserInformation());
-  G4LorentzVector prodPos(aTrack->GetGlobalTime() - aTrack->GetLocalTime(), aTrack->GetVertexPosition());
-  G4LorentzVector endPos(aTrack->GetGlobalTime(), aTrack->GetPosition());
   if (selectParticle(*aTrack, m_energyCut, m_selectTaggedOnly)) {
-    evtinfo->addParticle(aTrack);
+    auto search = m_trackMap.find(aTrack->GetTrackID());
+    if (search != m_trackMap.end()) {
+      evtinfo->addParticle(search->second);
+    } else {
+      throw std::runtime_error("ParticleHistoryaction::G4Track entry does not exist in map");
+    }
   }
 }
 
