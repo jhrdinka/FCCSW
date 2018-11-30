@@ -1,13 +1,13 @@
 #include "ModuleClusterWriter.h"
 
+#include <cstring>
+#include <string>
 #include "ACTS/Digitization/DigitizationModule.hpp"
 #include "ACTS/Digitization/PlanarModuleCluster.hpp"
 #include "ACTS/Digitization/Segmentation.hpp"
 #include "ACTS/Layers/Layer.hpp"
 #include "ACTS/Utilities/GeometryID.hpp"
 #include "RecTracker/FCCDigitizationCell.h"
-#include <cstring>
-#include <string>
 
 DECLARE_COMPONENT(ModuleClusterWriter)
 
@@ -45,7 +45,8 @@ StatusCode ModuleClusterWriter::initialize() {
   m_outputTree->Branch("g_x", &m_x);
   m_outputTree->Branch("g_y", &m_y);
   m_outputTree->Branch("g_z", &m_z);
-  m_outputTree->Branch("tracksPerCluster", &m_tracksPerCluster);
+  m_outputTree->Branch("nTrackPerCluster", &m_nTrackPerCluster);
+  m_outputTree->Branch("trackIDsPerCluster", &m_trackIDsPerCluster);
   m_outputTree->Branch("nCells", &m_nCells);
   m_outputTree->Branch("size_x", &m_sizeX);
   m_outputTree->Branch("size_y", &m_sizeY);
@@ -56,7 +57,6 @@ StatusCode ModuleClusterWriter::initialize() {
 }
 
 StatusCode ModuleClusterWriter::write(const sim::FCCPlanarCluster& cluster, int eventNr) {
-
   // access cluster surface
   auto& clusterSurface = cluster.referenceSurface();
   // surface center
@@ -89,17 +89,16 @@ StatusCode ModuleClusterWriter::write(const sim::FCCPlanarCluster& cluster, int 
       (*std::max_element(cell_IDy.begin(), cell_IDy.end())) - (*std::min_element(cell_IDy.begin(), cell_IDy.end())) + 1;
 
   long long int moduleID = detectorElement->identify();
-
   // first check if we are still on the same surface
   if (moduleID == m_moduleID) {
     // we are still on the same surface - update
-    m_moduleCache.update(cells.size(), pos.x(), pos.y(), pos.z(), cluster.trackIDs.size(), sizeX, sizeY, cluster.energy,
+    m_moduleCache.update(cells.size(), pos.x(), pos.y(), pos.z(), cluster.trackIDs, sizeX, sizeY, cluster.energy,
                          cluster.time);
   } else {
     // update module cache and parameters
     newModule(eventNr, moduleID, segmentation.binUtility().bins(), cells.size(), segmentation.binUtility().bins(0),
               segmentation.binUtility().bins(1), surfaceCenter.x(), surfaceCenter.y(), surfaceCenter.z(), pos.x(),
-              pos.y(), pos.z(), cluster.trackIDs.size(), sizeX, sizeY, cluster.energy, cluster.time);
+              pos.y(), pos.z(), cluster.trackIDs, sizeX, sizeY, cluster.energy, cluster.time);
   }
 
   return StatusCode::SUCCESS;

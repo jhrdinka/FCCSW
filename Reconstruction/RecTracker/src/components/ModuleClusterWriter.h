@@ -6,6 +6,7 @@
 #include "GaudiKernel/RndmGenerators.h"
 #include "RecTracker/IClusterWriter.h"
 #include "TFile.h"
+#include "TMatrixF.h"
 #include "TTree.h"
 
 /** @class ModuleClusterWriter
@@ -21,7 +22,6 @@ class FCCPlanarCluster;
 }
 
 class ModuleClusterWriter : public GaudiTool, virtual public IClusterWriter {
-
   ///@struct ModuleCache
   ///@brief internal helper struct
   /// This struct is a module cache, to accumulate all relevant information per module.
@@ -31,34 +31,37 @@ class ModuleClusterWriter : public GaudiTool, virtual public IClusterWriter {
     std::vector<float> _x;
     std::vector<float> _y;
     std::vector<float> _z;
-    std::vector<short int> _tracksPerCluster;
+    std::vector<short int> _nTrackPerCluster;
+    std::vector<UInt_t> _trackIDsPerCluster;
     std::vector<short int> _nCells;
     std::vector<short int> _sizeX;
     std::vector<short int> _sizeY;
     std::vector<float> _energy;
     std::vector<float> _time;
 
-    // default constructor
+    // simple constructor
     ModuleCache() {
-      _x.reserve(100);
-      _y.reserve(100);
-      _z.reserve(100);
-      _tracksPerCluster.reserve(100);
-      _nCells.reserve(100);
-      _sizeX.reserve(100);
-      _sizeY.reserve(100);
-      _energy.reserve(100);
-      _time.reserve(100);
+      _x.reserve(10);
+      _y.reserve(10);
+      _z.reserve(10);
+      _nTrackPerCluster.reserve(10);
+      _trackIDsPerCluster.reserve(10);
+      _nCells.reserve(10);
+      _sizeX.reserve(10);
+      _sizeY.reserve(10);
+      _energy.reserve(10);
+      _time.reserve(10);
     }
 
     // simple constructor
-    ModuleCache(int nChannelsOn, float x, float y, float z, short int tracksPerCluster, short int sizeX,
+    ModuleCache(int nChannelsOn, float x, float y, float z, std::vector<unsigned> trackIDsPerCluster, short int sizeX,
                 short int sizeY, float energy, float time)
         : _nChannelsOn(nChannelsOn) {
       _x.push_back(x);
       _y.push_back(y);
       _z.push_back(z);
-      _tracksPerCluster.push_back(tracksPerCluster);
+      _nTrackPerCluster.push_back(trackIDsPerCluster.size());
+      _trackIDsPerCluster.insert(_trackIDsPerCluster.end(), trackIDsPerCluster.begin(), trackIDsPerCluster.end());
       _nCells.push_back(nChannelsOn);
       _sizeX.push_back(sizeX);
       _sizeY.push_back(sizeY);
@@ -66,13 +69,14 @@ class ModuleClusterWriter : public GaudiTool, virtual public IClusterWriter {
       _time.push_back(time);
     }
 
-    void update(int nChannelsOn, float x, float y, float z, short int tracksPerCluster, short int sizeX,
+    void update(int nChannelsOn, float x, float y, float z, std::vector<unsigned> trackIDsPerCluster, short int sizeX,
                 short int sizeY, float energy, float time) {
       _nChannelsOn += nChannelsOn;
       _x.push_back(x);
       _y.push_back(y);
       _z.push_back(z);
-      _tracksPerCluster.push_back(tracksPerCluster);
+      _nTrackPerCluster.push_back(trackIDsPerCluster.size());
+      _trackIDsPerCluster.insert(_trackIDsPerCluster.end(), trackIDsPerCluster.begin(), trackIDsPerCluster.end());
       _nCells.push_back(nChannelsOn);
       _sizeX.push_back(sizeX);
       _sizeY.push_back(sizeY);
@@ -85,7 +89,8 @@ class ModuleClusterWriter : public GaudiTool, virtual public IClusterWriter {
       _x.clear();
       _y.clear();
       _z.clear();
-      _tracksPerCluster.clear();
+      _nTrackPerCluster.clear();
+      _trackIDsPerCluster.clear();
       _nCells.clear();
       _sizeX.clear();
       _sizeY.clear();
@@ -105,6 +110,8 @@ public:
   virtual StatusCode finalize() final;
   /// Gaudi interface execute method
   virtual StatusCode write(const sim::FCCPlanarCluster& cluster, int eventNr = 0) override final;
+  //  virtual const std::set<unsigned>& trackIDs() const override final;
+  // TMatrixF translateToMatrix(const std::vector<std::vector<unsigned>>& trackIDs) const;
 
 private:
   /// name of the output file
@@ -141,8 +148,11 @@ private:
   std::vector<float> m_y;
   /// global z of cluster
   std::vector<float> m_z;
-  /// Number of tracks per cluster
-  std::vector<short int> m_tracksPerCluster;
+  /// number of tracks per cluster
+  std::vector<short int> m_nTrackPerCluster;
+  /// the full list of track IDs, when used with together with 'm_nTrackPerCluster', all track IDs for each cluster can
+  /// be determined
+  std::vector<UInt_t> m_trackIDsPerCluster;
   /// cluster
   std::vector<short int> m_nCells;
   /// cluster size in x
@@ -158,8 +168,8 @@ private:
 
   /// update module cache and parameters
   void newModule(int eventNr, const long long int& moduleID, int nChannels, int nChannelsOn, int nChannels_l0,
-                 int nChannels_l1, float sX, float sY, float sZ, float x, float y, float z, short int tracksPerCluster,
-                 short int sizeX, short int sizeY, float energy, float time) {
+                 int nChannels_l1, float sX, float sY, float sZ, float x, float y, float z,
+                 std::vector<unsigned> trackIDsPerCluster, short int sizeX, short int sizeY, float energy, float time) {
     // 1) first write out data of previous module
     // fill the tree if it is not the first module
     if (m_moduleID >= 0) {
@@ -167,7 +177,8 @@ private:
       m_x = m_moduleCache._x;
       m_y = m_moduleCache._y;
       m_z = m_moduleCache._z;
-      m_tracksPerCluster = m_moduleCache._tracksPerCluster;
+      m_nTrackPerCluster = m_moduleCache._nTrackPerCluster;
+      m_trackIDsPerCluster = m_moduleCache._trackIDsPerCluster;
       m_nCells = m_moduleCache._nCells;
       m_sizeX = m_moduleCache._sizeX;
       m_sizeY = m_moduleCache._sizeY;
@@ -187,7 +198,7 @@ private:
     m_sZ = sZ;
     // update aggregated parameters
     m_moduleCache.clear();
-    m_moduleCache.update(nChannelsOn, x, y, z, tracksPerCluster, sizeX, sizeY, energy, time);
+    m_moduleCache.update(nChannelsOn, x, y, z, trackIDsPerCluster, sizeX, sizeY, energy, time);
   };
 };
 

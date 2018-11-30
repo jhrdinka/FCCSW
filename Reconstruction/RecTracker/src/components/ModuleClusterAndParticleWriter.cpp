@@ -20,11 +20,11 @@ DECLARE_COMPONENT(ModuleClusterAndParticleWriter)
 ModuleClusterAndParticleWriter::ModuleClusterAndParticleWriter(const std::string& type, const std::string& nam,
                                                                const IInterface* parent)
     : GaudiTool(type, nam, parent),
-      m_moduleID(-1),
+      m_moduleID(0),
       m_nChannels(0),
       m_nChannelsOn(0),
       m_moduleCache(),
-      m_trackIDsPerCluster(100, 30) {}
+      m_firstModule(true) {}
 
 StatusCode ModuleClusterAndParticleWriter::initialize() {
   if (GaudiTool::initialize().isFailure()) {
@@ -94,7 +94,6 @@ StatusCode ModuleClusterAndParticleWriter::initialize() {
   size_t nChargedPrim = 0;
   size_t nPart = 0;
   size_t eventCount = 0;
-  size_t nChargedGen = 0;
 
   // go through events
   while (reader.Next()) {
@@ -149,7 +148,6 @@ StatusCode ModuleClusterAndParticleWriter::initialize() {
       }
       m_sim_status.push_back(particle.core.status);
       m_sim_bits.push_back(particle.core.bits);
-      if (eventCount == 0) trackIDsParticles.insert(particle.core.bits);
       TVector3 momentum(particle.core.p4.px, particle.core.p4.py, particle.core.p4.pz);
       float pt = momentum.Perp();
       float eta = momentum.Eta();
@@ -203,6 +201,7 @@ StatusCode ModuleClusterAndParticleWriter::initialize() {
   m_outputTree->Branch("g_x", &m_x);
   m_outputTree->Branch("g_y", &m_y);
   m_outputTree->Branch("g_z", &m_z);
+  m_outputTree->Branch("nTracksPerCluster", &m_nTracksPerCluster);
   m_outputTree->Branch("trackIDsPerCluster", &m_trackIDsPerCluster);
   m_outputTree->Branch("nCells", &m_nCells);
   m_outputTree->Branch("size_x", &m_sizeX);
@@ -234,24 +233,20 @@ StatusCode ModuleClusterAndParticleWriter::write(const sim::FCCPlanarCluster& cl
   // the cells
   const auto& cells = cluster.digitizationCells();
   /// cell IDs in lx and ly
-  std::vector<int> cell_IDx;
-  std::vector<int> cell_IDy;
+  std::vector<unsigned> cell_IDx;
+  std::vector<unsigned> cell_IDy;
   for (auto& cell : cells) {
     // cell identification
     cell_IDx.push_back(cell.channel0);
     cell_IDy.push_back(cell.channel1);
   }
   // fill the cluster size
-  short int sizeX =
+  unsigned short sizeX =
       (*std::max_element(cell_IDx.begin(), cell_IDx.end())) - (*std::min_element(cell_IDx.begin(), cell_IDx.end())) + 1;
-  short int sizeY =
+  unsigned short sizeY =
       (*std::max_element(cell_IDy.begin(), cell_IDy.end())) - (*std::min_element(cell_IDy.begin(), cell_IDy.end())) + 1;
 
-  long long int moduleID = detectorElement->identify();
-
-  for (auto& trackIDs : cluster.trackIDs) {
-    trackIDsClusters.insert(trackIDs);
-  }
+  ULong64_t moduleID = detectorElement->identify();
 
   // first check if we are still on the same surface
   if (moduleID == m_moduleID) {
@@ -272,16 +267,9 @@ StatusCode ModuleClusterAndParticleWriter::finalize() {
   if (GaudiTool::finalize().isFailure()) {
     return StatusCode::FAILURE;
   }
-
-  size_t counter = 0;
-  for (auto& trackID : trackIDsParticles) {
-    auto search = trackIDsClusters.find(trackID);
-    if (search != trackIDsClusters.end()) {
-      counter++;
-    }
-  }
   // write out all clusters
   m_outputFile->cd();
+  info() << "Writing to file..." << endmsg;
   m_outputTree->Write();
   m_outputFile->Close();
 
