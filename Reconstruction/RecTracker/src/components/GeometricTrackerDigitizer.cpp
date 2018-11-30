@@ -26,9 +26,6 @@
 #include "datamodel/TrackCluster.h"
 #include "datamodel/TrackClusterCollection.h"
 #include "datamodel/TrackHitCollection.h"
-#include <boost/config.hpp>
-#include <boost/graph/adjacency_list.hpp>
-#include <boost/graph/connected_components.hpp>
 
 DECLARE_ALGORITHM_FACTORY(GeometricTrackerDigitizer)
 
@@ -101,7 +98,6 @@ StatusCode GeometricTrackerDigitizer::initialize() {
 }
 
 StatusCode GeometricTrackerDigitizer::execute() {
-
   // the track hits of the cluster
   auto trackHits = m_trackHits.createAndPut();
   // prepare the output clusters
@@ -465,7 +461,6 @@ void GeometricTrackerDigitizer::fillCluster(std::vector<std::vector<Cell>>& merg
 }
 
 StatusCode GeometricTrackerDigitizer::finalize() {
-
   StatusCode sc = GaudiAlgorithm::finalize();
   return sc;
 }
