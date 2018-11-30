@@ -11,7 +11,14 @@ ParticleHistoryAction::ParticleHistoryAction(double aEnergyCut, bool selectTagge
     : m_energyCut(aEnergyCut), m_selectTaggedOnly(selectTaggedOnly) {}
 
 void ParticleHistoryAction::PreUserTrackingAction(const G4Track* aTrack) {
-  m_trackMap[aTrack->GetTrackID()] = new G4Track(*aTrack);
+  // copy track
+  auto startTrack = new G4Track(*aTrack);
+  auto trackID = aTrack->GetTrackID();
+  // set ids, which are not copied
+  startTrack->SetTrackID(trackID);
+  startTrack->SetParentID(aTrack->GetParentID());
+  // add it to map
+  m_trackMap[trackID] = startTrack;
 }
 
 void ParticleHistoryAction::PostUserTrackingAction(const G4Track* aTrack) {
